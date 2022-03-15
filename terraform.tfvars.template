@@ -1,0 +1,7 @@
+# Authentication
+# complete with your OCID tenancy
+tenancy_ocid         = "ocid1.tenancy.oc1.."
+private_key_path     = "user.pem"
+
+# complete with your OCID compartment
+compartment_ocid = "ocid1.compartment.oc1.."

@@ -1,0 +1,49 @@
+version: 0.1
+component: build
+timeoutInSeconds: 6000
+runAs: root
+shell: bash
+env:
+  # these are local variables to the build config
+  variables:
+
+  # the value of a vaultVariable is the secret-id (in OCI ID format) stored in the OCI Vault service
+  # you can then access the value of that secret in your build_spec.yaml commands
+  vaultVariables:
+    user_ocid: ocid1.vaultsecret.oc1.eu-frankfurt-1.
+    fingerprint: ocid1.vaultsecret.oc1.eu-frankfurt-1.
+    aws_access_key_id: ocid1.vaultsecret.oc1.eu-frankfurt-1.
+    aws_secret_access_key: ocid1.vaultsecret.oc1.eu-frankfurt-1.
+    
+steps:
+  - type: Command
+    name: "Install Terraform"
+    timeoutInSeconds: 40
+    command: |
+      yum install -y yum-utils
+      yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+      yum -y install terraform
+   
+  - type: Command
+    name: "TF S3 Backend Config"
+    timeoutInSeconds: 40
+    command: |
+      cd ${OCI_PRIMARY_SOURCE_DIR}
+      echo "[default]" > cred_store
+      echo "aws_access_key_id=${aws_access_key_id}">>cred_store
+      echo "aws_secret_access_key=${aws_secret_access_key}">>cred_store
+      ls -lrt
+      cat cred_store
+  - type: Command
+    name: "Terraform actions"
+    timeoutInSeconds: 4000
+    command: |
+      cd ${OCI_PRIMARY_SOURCE_DIR}
+      pwd
+      unset OCI_AUTH
+      export TF_VAR_user_ocid=${user_ocid}
+      export TF_VAR_fingerprint=${fingerprint}
+      terraform init -migrate-state
+      terraform validate 
+      terraform plan 
+      terraform apply -auto-approve 
