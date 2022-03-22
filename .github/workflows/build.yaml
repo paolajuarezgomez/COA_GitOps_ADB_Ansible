@@ -9,16 +9,11 @@ jobs:
   apply:
     name: Terraform Plan Job
 
-    runs-on: [self-hosted, pjuarez]
+    runs-on: ubuntu-18.04
     
     steps:
     - name: Checkout codebase
       uses: actions/checkout@v1
-    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner ${{ runner.name }}."
-    - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-    - name: List files in the repository
-    - run: |
-            ls ${{ github.workspace }}
 
     - name: Terraform - Init
       uses: hashicorp/terraform-github-actions/init@v0.4.0
