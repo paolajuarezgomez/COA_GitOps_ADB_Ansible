@@ -1,5 +1,5 @@
-# COA DevOps Training UseCase. 
-# -- How to build a pipeline with OCI DevOps --
+# COA Deploy TRF with GitHub UseCase. 
+# -- How to build a pipeline with GitHub Action  --
 
 This example creates an Autonomous Database (JSON) exposed to the public Internet.
 
@@ -7,13 +7,23 @@ This example creates an Autonomous Database (JSON) exposed to the public Interne
 
 During this UseCase we're going to:
 
-* Use OCI DevOps service.
-* Configure a build pipeline.
+* Use Github Actions to build a pipeline.
 * Use OCI S3 as a backed for terraform.
 * Use OCI Vault for storing sensitive information.
 * Deploy IaC using Terraform, in this case an ADB resource.
 
 ## ✅ Usage
+
+
+
+* The first thing you’ll need to do before your GitHub Actions can run is to add your credentials to the repository. To do this you will need to follow these steps:
+
+Navigate to your repository and select the Settings tab.
+Once there you should see on the left a Secrets section third from the bottom of the list, click on that.
+Click on the New repository secret button.
+Add your AWS_SECRET_ACCESS_KEY and click the Add secret button.
+Repeat step 3 and add your AWS_ACCESS_KEY_ID and click the Add secret button.
+
 
 * Create an object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
 * We want to use a [S3-Compatible Backend](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) , read the documentation carefully.
@@ -21,8 +31,6 @@ During this UseCase we're going to:
 * Declare the below variables to OCI vault as secrets
 
 ````
-aws_access_key_id 
-aws_secret_access_key 
 tenancy_ocid
 compartment_ocid
 ````
@@ -77,9 +85,4 @@ compartment_ocid
 If you need help, ask us in the slack channel #iac-enablement
 
 ## ✅ References
-
-* RahulMR42 [https://github.com/RahulMR42/OCI-BuildRunner-With-Terraform-with-S3State](https://github.com/RahulMR42/OCI-BuildRunner-With-Terraform-with-S3State ) 
-* OCI Devops -  [https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm](https://docs.oracle.com/en-us/iaas/Content/devops/using/home.htm) 
-* OCI Terraform references - [https://registry.terraform.io/providers/hashicorp/oci/latest/docs](https://registry.terraform.io/providers/hashicorp/oci/latest/docs ) 
-* OCI Terraform with S3 backend -[https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm)
-* OCI Object storage -[https://docs.oracle.com/en-us/iaas/Content/Object/home.htm ](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm )
+* [https://acloudguru.com/blog/engineering/how-to-use-github-actions-to-automate-terraform](https://acloudguru.com/blog/engineering/how-to-use-github-actions-to-automate-terraform)
