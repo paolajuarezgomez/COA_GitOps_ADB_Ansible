@@ -9,12 +9,9 @@ During this UseCase we're going to:
 
 * Use Github Actions to build a pipeline.
 * Use OCI S3 as a backed for terraform.
-* Use OCI Vault for storing sensitive information.
 * Deploy IaC using Terraform, in this case an ADB resource.
 
 ## ✅ Usage
-
-
 
 The first thing you’ll need to do before your GitHub Actions can run is to add your credentials to the repository. To do this you will need to follow these steps:
 
@@ -27,11 +24,10 @@ The first thing you’ll need to do before your GitHub Actions can run is to add
 user_id
 api_fingerprint
 ````
+* We want to use a [S3-Compatible Backend](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) , read the documentation carefully. You need an OCI object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
 
-* Create an object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
-* We want to use a [S3-Compatible Backend](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) , read the documentation carefully.
 * Create a ["Customer Secret keys"](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm#To4) also named as "Amazon S3 Compatibility API keys". A Customer Secret key consists of an Access Key/Secret key pair. 
-* Add the S3 varibales to the previus ones:
+* Add the *Custome Secret Keys* varibales to the previus ones:
 
 ````
 user_id
@@ -39,7 +35,6 @@ api_fingerprint
 access_key_id 
 secret_access_key 
 ````
-
 
 * Clone this repo in OraHub, GitLab or GitHub and create you own DevOps repository.
 * Fill the correct OCID values of secrets in file **build_spec.yaml**
