@@ -1,18 +1,14 @@
 name: GitHub Actions Demo
 #on:
 #  - pull_request
-#on: [push]
-on:
-    push:
-        branches:
-            - main
+on: [push]
+#on:
+#    push:
+#        branches:
+#            - main
 jobs:
  terraform:
-    name: 'Deploy infrastructure'
-    defaults:
-      run:
-    #    shell: bash
-      working-directory: ${{ env.tf_actions_working_dir }}        
+    name: 'Deploy infrastructure'       
     env:
       GITHUB_TOKEN: ${{ secrets.TOKEN }}
       TF_ACTION_WORKING_DIR: "./terraform"
