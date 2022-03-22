@@ -18,7 +18,7 @@ steps:
     - run: echo "🖥️ The workflow is now ready to test your code on the runner."
     - name: List files in the repository
     - run: |
-      ls ${{ github.workspace }}
+            ls ${{ github.workspace }}
 
     - name: Terraform - Init
       uses: hashicorp/terraform-github-actions/init@v0.4.0
