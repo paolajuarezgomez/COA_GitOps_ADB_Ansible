@@ -18,43 +18,43 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.name }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - run: echo "🐧 This job is now running on a ${{ runner.name }} server hosted by GitHub!"
+    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
     
     # Checkout the repository to the GitHub Actions runner
-      - name: Check out repository code
-        uses: actions/checkout@v2
+    - name: Check out repository code
+      uses: actions/checkout@v2
     
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo  "The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
+    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+    - run: echo  "The workflow is now ready to test your code on the runner."
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}
           
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v1.3.2
-        with:
-           terraform_wrapper: false
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v1.3.2
+      with:
+       terraform_wrapper: false
       
-      - name: Terraform fmt
-        id: fmt
-        working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
-        run: terraform fmt -check
+    - name: Terraform fmt
+      id: fmt
+      working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
+      run: terraform fmt -check
 
-      - name: Terraform Init
-        id: init
-        working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
-        run: terraform init
+    - name: Terraform Init
+      id: init
+      working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
+      run: terraform init
 
-      - name: Terraform Validate
-        id: validate
-        working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
-        run: terraform validate -no-color
+    - name: Terraform Validate
+      id: validate
+      working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
+      run: terraform validate -no-color
 
-      - name: Terraform Plan
-        id: plan
-        working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
+    - name: Terraform Plan
+      id: plan
+      working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
       run: terraform plan -no-color -out=tfplan
 
     
