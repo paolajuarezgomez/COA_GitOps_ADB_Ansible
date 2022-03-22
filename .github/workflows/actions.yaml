@@ -7,10 +7,10 @@ on: [push]
 jobs:
  terraform:
     name: 'Deploy infrastructure'
-    defaults:
-      run:
-        shell: bash
-        working-directory: terraform
+    #defaults:
+    #  run:
+    #    shell: bash
+    #    working-directory: terraform
         
     env:
       GITHUB_TOKEN: ${{ secrets.TOKEN }}
@@ -41,6 +41,10 @@ jobs:
       uses: hashicorp/setup-terraform@v1.3.2
       with:
         terraform_wrapper: false
+    
+    - name: List files in the repository
+      run: |
+         ls ${{ github.workspace }}
       
     - name: Terraform fmt
       id: fmt
