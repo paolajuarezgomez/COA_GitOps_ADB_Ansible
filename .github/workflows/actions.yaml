@@ -19,7 +19,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Terraform Init
+      - name: Terraform  init
         uses: hashicorp/terraform-github-actions/init@v0.4.0
         env:
             GITHUB_TOKEN: ${{ secrets.TOKEN }}
