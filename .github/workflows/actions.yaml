@@ -1,16 +1,13 @@
 name: Deploy Infrastructure
-
 on:
   push:
     branches:
       - master
-
 jobs:
   tf_fmt:
     name: Deploy Site
     runs-on: ubuntu-latest
     steps:
-
     - name: Checkout Repo
       uses: actions/checkout@v1
 
