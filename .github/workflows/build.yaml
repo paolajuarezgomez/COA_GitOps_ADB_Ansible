@@ -1,14 +1,16 @@
+
 name: Deploy Infrastructure
+
 on:
-  push:
-    branches:
-      - master
-      
-  jobs:
-    name: Deploy Site
-    ##runs-on: ubuntu-latest
-    runs-on: [self-hosted, pjuarez]
-    steps:
+push:
+branches:
+- master
+
+jobs:
+tf_fmt:
+name: Deploy Site
+runs-on: [self-hosted, pjuarez]
+steps:
 
     - name: Checkout Repo
       uses: actions/checkout@v2
