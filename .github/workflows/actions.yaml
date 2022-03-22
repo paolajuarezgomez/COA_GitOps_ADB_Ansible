@@ -3,12 +3,8 @@ name: GitHub Actions Demo
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
-
-defaults:
-  run:
-    shell: bash
     
 jobs:
  terraform:
@@ -45,7 +41,6 @@ jobs:
         terraform_wrapper: false
         
     - name: Terraform Init
-      id: init
       run: terraform init
   
     
