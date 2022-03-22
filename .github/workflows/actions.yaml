@@ -45,7 +45,6 @@ jobs:
         terraform_wrapper: false
         
     - name: Terraform Init
-      uses: hashicorp/setup-terraform@v1.3.2
       id: init
       run: terraform init
   
