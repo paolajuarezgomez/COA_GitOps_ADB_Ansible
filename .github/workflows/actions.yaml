@@ -1,11 +1,9 @@
 name: GitHub Actions Demo
-#on:
-#  - pull_request
-on: [push]
-#on:
-#    push:
-#        branches:
-#            - main
+
+on:
+    push:
+       branches:
+            - main
 jobs:
  terraform:
     name: 'Deploy infrastructure'       
