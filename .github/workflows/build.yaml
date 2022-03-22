@@ -1,5 +1,9 @@
-name: GitHub Actions Demo
-on: [push]
+name: Deploy Infrastructure
+on:
+  push:
+    branches:
+      - master
+      
 jobs:
   Explore-GitHub-Actions:
     runs-on: [self-hosted, pjuarez]
@@ -15,5 +19,31 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is  ${{ job.status }}."
-      
+  
+jobs:
+  tf_fmt:
+    name: Deploy Site
+    ##runs-on: ubuntu-latest
+    runs-on: [self-hosted, pjuarez]
+    steps:
+
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+    - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+    - name: List files in the repository
+    run: |
+        ls ${{ github.workspace }}
+
+    - name: Terraform Init
+      uses: hashicorp/terraform-github-actions/init@v0.4.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        TF_ACTION_WORKING_DIR: 'terraform'
+        TF_VAR_fingerprint:  ${{ secrets.API_FINGERPRINT }}
+        TF_VAR_user_ocid:  ${{ secrets.USER_ID }}
+
+    - name: Terraform Validate
+      uses: hashicorp/terraform-github-actions/validate@v0.3.7
+
 
