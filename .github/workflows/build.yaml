@@ -2,20 +2,21 @@
 name: Deploy Infrastructure
 
 on:
-push:
-branches:
-- master
+    push:
+        branches:
+            - master
 
 jobs:
-tf_fmt:
-name: Deploy Site
-runs-on: [self-hosted, pjuarez]
+    tf_fmt:
+        name: Deploy Site
+        runs-on: [self-hosted, pjuarez]
 
-steps:
-    - name: Checkout codebase
-      uses: actions/checkout@v1
-    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner ${{ runner.name }}."
-    - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-    - name: List files in the repository
-    - run: |
+        steps:
+        - name: Checkout codebase
+          uses: actions/checkout@v1
+        
+        - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner ${{ runner.name }}."
+        - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+        - name: List files in the repository
+        - run: |
             ls ${{ github.workspace }}
