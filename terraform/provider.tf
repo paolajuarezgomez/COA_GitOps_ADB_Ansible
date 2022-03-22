@@ -2,16 +2,9 @@
 ## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
 
 terraform {
-  required_version = ">= 0.14"
   required_providers {
     oci = {
-      source  = "hashicorp/oci"
-      
-    }
-    
-    random = {
-      source  = "hashicorp/random"
-      version = "2.3.0" 
+      source = "hashicorp/oci"
     }
   }
 }
