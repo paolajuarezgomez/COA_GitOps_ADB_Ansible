@@ -28,12 +28,17 @@ user_id
 api_fingerprint
 ````
 
-
 * Create an object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
 * We want to use a [S3-Compatible Backend](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) , read the documentation carefully.
 * Create a ["Customer Secret keys"](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm#To4) also named as "Amazon S3 Compatibility API keys". A Customer Secret key consists of an Access Key/Secret key pair. 
-* Declare the below variables to OCI vault as secrets
+* Add the S3 varibales to the previus ones:
 
+````
+user_id
+api_fingerprint
+aws_access_key_id 
+aws_secret_access_key 
+````
 
 
 * Clone this repo in OraHub, GitLab or GitHub and create you own DevOps repository.
