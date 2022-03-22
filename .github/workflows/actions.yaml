@@ -7,6 +7,11 @@ on: [push]
 jobs:
  terraform:
     name: 'Deploy infrastructure'
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./terraform
+        
     env:
       GITHUB_TOKEN: ${{ secrets.TOKEN }}
       TF_ACTION_WORKING_DIR: "./terraform"
