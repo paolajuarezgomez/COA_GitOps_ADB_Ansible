@@ -1,9 +1,15 @@
 name: GitHub Actions Demo
 
 on:
-    push:
-       branches:
-            - master
+  push:
+    branches:
+    - main
+  pull_request:
+
+defaults:
+  run:
+    shell: bash
+    
 jobs:
  terraform:
     name: 'Deploy infrastructure'       
