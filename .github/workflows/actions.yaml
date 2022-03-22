@@ -51,6 +51,8 @@ jobs:
     - name: Terraform Init
       id: init
       working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
+      env:
+        TF_ACTION_WORKING_DIR: "./terraform"
       run: terraform init
       
     - name: List files in the repository
