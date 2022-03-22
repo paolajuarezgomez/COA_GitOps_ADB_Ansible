@@ -10,7 +10,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./terraform
+        working-directory: terraform
         
     env:
       GITHUB_TOKEN: ${{ secrets.TOKEN }}
