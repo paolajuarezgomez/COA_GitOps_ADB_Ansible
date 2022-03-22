@@ -5,7 +5,7 @@ on: [push]
 #        branches:
 #            - master
 jobs:
-    terraform:
+ terraform:
     name: 'Deploy infrastructure'
     env:
       GITHUB_TOKEN: ${{ secrets.TOKEN }}
