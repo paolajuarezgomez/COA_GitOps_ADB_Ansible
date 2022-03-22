@@ -21,8 +21,13 @@ During this UseCase we're going to:
 Navigate to your repository and select the Settings tab.
 Once there you should see on the left a Secrets section third from the bottom of the list, click on that.
 Click on the New repository secret button.
-Add your AWS_SECRET_ACCESS_KEY and click the Add secret button.
-Repeat step 3 and add your AWS_ACCESS_KEY_ID and click the Add secret button.
+Add the next secrets:
+
+````
+user_id
+api_fingerprint
+````
+
 
 
 * Create an object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
@@ -30,10 +35,7 @@ Repeat step 3 and add your AWS_ACCESS_KEY_ID and click the Add secret button.
 * Create a ["Customer Secret keys"](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm#To4) also named as "Amazon S3 Compatibility API keys". A Customer Secret key consists of an Access Key/Secret key pair. 
 * Declare the below variables to OCI vault as secrets
 
-````
-tenancy_ocid
-compartment_ocid
-````
+
 
 * Clone this repo in OraHub, GitLab or GitHub and create you own DevOps repository.
 * Fill the correct OCID values of secrets in file **build_spec.yaml**
