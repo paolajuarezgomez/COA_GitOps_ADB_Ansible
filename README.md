@@ -16,18 +16,17 @@ During this UseCase we're going to:
 
 
 
-* The first thing you’ll need to do before your GitHub Actions can run is to add your credentials to the repository. To do this you will need to follow these steps:
+The first thing you’ll need to do before your GitHub Actions can run is to add your credentials to the repository. To do this you will need to follow these steps:
 
-Navigate to your repository and select the Settings tab.
-Once there you should see on the left a Secrets section third from the bottom of the list, click on that.
-Click on the New repository secret button.
-Add the next secrets:
+* Navigate to your repository and select the Settings tab.
+* Once there you should see on the left a Secrets section third from the bottom of the list, click on that.
+* Click on the New repository secret button.
+* Add the next secrets:
 
 ````
 user_id
 api_fingerprint
 ````
-
 
 
 * Create an object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
