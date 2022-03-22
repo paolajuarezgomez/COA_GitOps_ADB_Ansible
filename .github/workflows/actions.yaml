@@ -42,10 +42,6 @@ jobs:
       with:
         terraform_wrapper: false
     
-    - name: List files in the repository
-      run: |
-         ls ${{ github.workspace }}
-      
     - name: Terraform fmt
       id: fmt
       working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
@@ -55,6 +51,11 @@ jobs:
       id: init
       working-directory: ${{ env.TF_ACTIONS_WORKING_DIR }}
       run: terraform init
+      
+    - name: List files in the repository
+      run: |
+         ls ${{ github.workspace }}
+      
 
     - name: Terraform Validate
       id: validate
