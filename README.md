@@ -37,7 +37,11 @@ secret_access_key
 ````
 
 * Clone this repo in OraHub, GitLab or GitHub and create you own DevOps repository.
-* Fill the correct OCID values of secrets in file **build_spec.yaml**
+* The pipeline configuration is defined in .github/workflows **build.yaml**
+
+
+
+
 * Add your *api_private_key* to the file **user.pem**
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
 * Define the values of your *region* and *adb_password* in the file **adb.auto.tfvars**
