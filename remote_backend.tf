@@ -17,6 +17,6 @@
 #}
 
 
-terraform {
-    backend "http" { }
-}
+#terraform {
+#   backend "http" { }
+#}
