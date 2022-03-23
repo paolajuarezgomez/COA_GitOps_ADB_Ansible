@@ -51,7 +51,7 @@ secret_access_key
 * Review the steps...
 ![pipeline](images/pipeline.png)
 ![plan](images/plan.png)
-![apply](images/apply.png)
+![apply](images/Apply.png)
 
 * Check that now you can see the database provisioned in your compartment.
 ![console](images/console.png)
