@@ -59,16 +59,18 @@ jobs:
       
     - name: Terraform Plan
       id: plan
-      #run: |
-      #  export TF_VAR_region
-      #  export TF_VAR_user_ocid
-      # export TF_VAR_fingerprint
       run: terraform plan -no-color
-    - run: echo ${{ steps.plan.outputs.stdout }}
-    - run: echo ${{ steps.plan.outputs.stderr }}
-    - run: echo ${{ steps.plan.outputs.exitcode }}
+    #- run: echo ${{ steps.plan.outputs.stdout }}
+    #- run: echo ${{ steps.plan.outputs.stderr }}
+    #- run: echo ${{ steps.plan.outputs.exitcode }}
 
 
+    - name: Terraform apply
+      id: apply 
+      run: terraform apply -auto-approve
+      
+      
+      
     - uses: actions/github-script@v6
       if: github.event_name == 'pull_request'
       env:
