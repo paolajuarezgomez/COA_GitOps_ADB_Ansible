@@ -50,8 +50,8 @@ jobs:
     
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1.3.2
-      with:
-        terraform_wrapper: false
+      #with:
+      #  terraform_wrapper: false
         
     - name: Terraform Init
       id: init
@@ -64,7 +64,10 @@ jobs:
       #  export TF_VAR_user_ocid
       # export TF_VAR_fingerprint
       run: terraform plan -no-color
-      continue-on-error: true
+    - run: echo ${{ steps.plan.outputs.stdout }}
+    - run: echo ${{ steps.plan.outputs.stderr }}
+    - run: echo ${{ steps.plan.outputs.exitcode }}
+
 
     - uses: actions/github-script@v6
       if: github.event_name == 'pull_request'
