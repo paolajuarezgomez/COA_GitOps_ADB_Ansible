@@ -44,11 +44,16 @@ secret_access_key
 * Define the values of your *region* and *namespace* in the file **remote_backend.tf**
 
 * Change you repo code, for example change the ADB name, and push the changes.
+![mergepullrequest](images/mergepullrequest.png)
+![meergeends](images/meergeends.png)
 
-* Review the pipeline in the tab "actions" 
+* This is the outcome of actions/github-script@v6
+![output](images/output.png)
+
+* If we review the pipeline in the tab "actions" 
 ![tabactions](images/tabactions.png)
 
-* Review the steps...
+* We can see the different pipeline steps/stages...
 ![pipeline](images/pipeline.png)
 
 ![plan](images/plan.png)
