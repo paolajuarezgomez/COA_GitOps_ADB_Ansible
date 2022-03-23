@@ -43,7 +43,7 @@ secret_access_key
 * Define the values of your *region* and *adb_password* in the file **adb.auto.tfvars**
 * Define the values of your *region* and *namespace* in the file **remote_backend.tf**
 
-* Change you repo code, for example change the ADB name, and push the changes.
+* Change you repo code, for example change the ADB name, and do a "merge pull request" to deploy the changes.
 ![mergepullrequest](images/mergepullrequest.png)
 ![meergeends](images/meergeends.png)
 
