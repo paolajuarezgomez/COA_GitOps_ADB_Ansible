@@ -25,7 +25,7 @@ user_id
 api_fingerprint
 token
 ````
-* *token* is a personal [github token] (https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+* *token* is a personal [github token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 * We want to use a [S3-Compatible Backend](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) , read the documentation carefully. You need an OCI object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
 
