@@ -49,7 +49,7 @@ secret_access_key
 * This is the outcome of actions/github-script@v6 , you can review the plan outcome before do the merge.
 ![output](images/OutcomePlan.png)
 
-
+* When you do the merge the workflow with the apply job is launched.
 ![meergeends](images/meergeends.png)
 
 * If we review the pipeline in the tab "actions" 
@@ -64,6 +64,10 @@ secret_access_key
 
 * Check that now you can see the database provisioned in your compartment.
 ![console](images/console.png)
+
+* After the provisioning the outcome of the apply step is showed in the merge request page.
+![console](images/OutcomeApply.png)
+
 
 * Remove manually (using OCI Console) the ADB created previously.
 
