@@ -1,4 +1,4 @@
-name: Terraform plan 
+name: Terraform  
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
     
 jobs:
  job1:
-    name: 'Terrafor plan'       
+    name: 'Terraform plan'       
     env:
       GITHUB_TOKEN: ${{ secrets.TOKEN }}
       TF_VAR_fingerprint:  ${{ secrets.API_FINGERPRINT }}
