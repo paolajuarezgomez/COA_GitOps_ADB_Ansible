@@ -57,7 +57,7 @@ secret_access_key
 ![tabactions](images/tabactions.png)
 
 * We can see the different pipelines steps/stages...
-![workflow](images/pipelineworkflowpng)
+![workflow](images/workflow.png)
 
 ![plan](images/Plan.png)
 ![plan1](images/Plan1.png)
