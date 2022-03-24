@@ -68,26 +68,8 @@ jobs:
       with:
         github-token: ${{ secrets.TOKEN }}
         script: |
-          const output = `#### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-      
-          <details><summary>Show Plan</summary>
-      
-          \`\`\`\n
-          ${process.env.PLAN}
-          \`\`\`
-      
-          </details>
-          
-            #### Terraform apply 📖\`${{ steps.apply.outcome }}\`
-      
-          <details><summary><Show Apply</summary>
-      
-          \`\`\`\n
-          ${process.env}
-          \`\`\`
-      
-          </details>
-      
+          const output = `#### Terraform apply 📖\`${{ steps.apply.outcome }}\`
+            
           *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`;
         
           github.rest.issues.createComment({
