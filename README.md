@@ -44,10 +44,10 @@ secret_access_key
 * Define the values of your *region* and *namespace* in the file **remote_backend.tf**
 
 * Change you repo code, for example change the ADB name, and do a "merge pull request" to deploy the changes.
-![mergepullrequest](images/mergepullrequest.png)
+![mergepullrequest](images/pipeline1.png)
 
 * This is the outcome of actions/github-script@v6 , you can review the plan outcome before do the merge.
-![output](images/output.png)
+![output](images/OutcomePlan.png)
 
 
 ![meergeends](images/meergeends.png)
