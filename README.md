@@ -52,10 +52,10 @@ secret_access_key
 * When you do the merge the workflow with the apply job is launched.
 ![meergeends](images/meergeends.png)
 
-* If we review the pipeline in the tab "actions" 
+* If we review the pipelines ( plan and apply) in the tab "actions" 
 ![tabactions](images/tabactions.png)
 
-* We can see the different pipeline steps/stages...
+* We can see the different pipelines steps/stages...
 ![pipeline](images/pipeline.png)
 
 ![plan](images/plan.png)
@@ -65,9 +65,8 @@ secret_access_key
 * Check that now you can see the database provisioned in your compartment.
 ![console](images/console.png)
 
-* After the provisioning the outcome of the apply step is showed in the merge request page.
+* After the provisioning, the outcome of the apply step is showed in the merge request page.
 ![console](images/OutcomeApply.png)
-
 
 * Remove manually (using OCI Console) the ADB created previously.
 
