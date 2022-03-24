@@ -57,11 +57,12 @@ secret_access_key
 ![tabactions](images/tabactions.png)
 
 * We can see the different pipelines steps/stages...
-![pipeline](images/pipeline.png)
+![workflow](images/pipelineworkflowpng)
 
-![plan](images/plan.png)
-
+![plan](images/Plan.png)
+![plan1](images/Plan1.png)
 ![apply](images/Apply.png)
+![apply1](images/Apply1.png)
 
 * Check that now you can see the database provisioned in your compartment.
 ![console](images/console.png)
