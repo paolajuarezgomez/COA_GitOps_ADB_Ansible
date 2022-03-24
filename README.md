@@ -38,7 +38,7 @@ secret_access_key
 ````
 
 * Clone this repo in OraHub, GitLab or GitHub and create you own repository.
-* The pipeline configuration is defined in .github/workflows **build.yaml**
+* The pipelines configuration is defined in .github/workflows, in this case we have created plan.yaml and apply.yaml
 * Add your *api_private_key* to the file **user.pem**
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
 * Define the values of your *region* and *adb_password* in the file **adb.auto.tfvars**
