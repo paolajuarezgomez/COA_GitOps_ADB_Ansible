@@ -1,0 +1,102 @@
+
+name: Terraform apply
+    
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  Terraform_apply:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      TF_VAR_fingerprint:  ${{ secrets.API_FINGERPRINT }}
+      TF_VAR_user_ocid:  ${{ secrets.USER_ID }}
+      TF_VAR_region: ${{ secrets.REGION}}
+      TF_ACTION_WORKSPACE: "default"
+      AWS_ACCESS_KEY_ID: ${{ secrets.ACCES_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY}}
+    
+    steps:
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - run: echo "🐧 This job is now running on a ${{ runner.name }} server hosted by GitHub!"
+    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    
+    # Checkout the repository to the GitHub Actions runner
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    
+    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+    - run: echo  "The workflow is now ready to test your code on the runner."
+    - name: List files in the repository
+      run: |
+         ls ${{ github.workspace }}
+          
+        
+    # Configure S3 backend
+    - name: Configure S3 backend
+      run: | 
+        echo  "[default]" > cred_store
+        echo "aws_access_key_id= ${{ secrets.access_key_id}}" >> cred_store
+        echo "aws_secret_access_key= ${{ secrets.secret_access_key}}" >> cred_store
+        cat cred_store
+        echo ${{ secrets.secret_access_key}}
+        echo ${{ secrets.REGION}}
+    
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v1.3.2
+      #with:
+      #  terraform_wrapper: false
+        
+    - name: Terraform Init
+      id: init
+      run: terraform init
+      
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan -no-color
+    
+    - name: Terraform apply
+      id: apply
+      run: terraform apply -auto-approve  
+      
+    - uses: actions/github-script@v6
+      env:
+        PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+      with:
+        github-token: ${{ secrets.TOKEN }}
+        script: |
+          const output = `#### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+      
+          <details><summary>Show Plan</summary>
+      
+          \`\`\`\n
+          ${process.env.PLAN}
+          \`\`\`
+      
+          </details>
+          
+            #### Terraform apply 📖\`${{ steps.apply.outcome }}\`
+      
+          <details><summary><Show Apply</summary>
+      
+          \`\`\`\n
+          ${process.env}
+          \`\`\`
+      
+          </details>
+      
+          *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`;
+        
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: output
+          })
+          
+
+    
+    
