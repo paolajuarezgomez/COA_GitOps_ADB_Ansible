@@ -3,8 +3,8 @@
 
 module "oci-adb" {
   source                    = "github.com/oracle-quickstart/oci-adb"
-  adb_database_db_name      = "myadbdb"
-  adb_database_display_name = "myadbdb"
+  adb_database_db_name      = "myadbdb1"
+  adb_database_display_name = "myadbdb1"
   adb_password              = var.adb_password
   adb_database_db_workload  = "AJD" # Autonomous JSON Database (AJD)
   compartment_ocid          = var.compartment_ocid
