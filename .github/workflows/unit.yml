@@ -48,15 +48,5 @@ jobs:
         working-directory: test
         run: go test -v -tags=unit
          
-      - name: Add Comment to Pull Request if Success
-        if: ${{ success() }}
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.TOKEN }}
-          script: |
-            await github.rest.issues.createComment({
-            owner: context.repo.owner, 
-            repo: context.repo.repo, 
-            issue_number: ${{ env.pr_num }},
-            body: 'Its Success'
-            });
+      - run: Write-Output "Terratest ${{ steps.test.outputs }}"
+     
