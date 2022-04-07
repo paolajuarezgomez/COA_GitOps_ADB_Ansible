@@ -56,4 +56,4 @@ jobs:
          github-token: ${{ secrets.TOKEN }}
          script: |
           const output = `#### Terraform Format and Style 🖌\`
-          ${{ steps.test.outputs.stdout }}\`
+          ${{ steps.test.outputs.stdout }}\``
