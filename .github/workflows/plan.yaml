@@ -83,11 +83,7 @@ jobs:
           #### Terraform Initialization ⚙️\`${{ steps.init.outcome}}\`
           #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
           #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-          <details><summary>Show Plan</summary>
-          \`\`\`\n
-          ${{steps.plan.outputs.stdout}}
-          \`\`\`
-          </details>
+
           *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
           github.rest.issues.createComment({
             issue_number: context.issue.number,
@@ -95,4 +91,15 @@ jobs:
             repo: context.repo.repo,
             body: output
           })
+        
+        body: |
+              ___
+              ## Terraform Plan ![Terraform Plan](https://img.shields.io/badge/Terraform%20plan-passed-green)
+              <details><summary>view plan</summary>
+              <p>
+              ```bash
+              ${{ steps.plan.outputs.stdout }}
+              ```
+              </p>
+              </details>
           
