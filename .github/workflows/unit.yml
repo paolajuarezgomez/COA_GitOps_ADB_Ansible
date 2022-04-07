@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Terraform Unit Tests
 on: push
 jobs:
   go-tests:
@@ -18,6 +18,4 @@ jobs:
       - name: Run Go Tests
         working-directory: test
         run: go test -v -tags=unit
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY 
+    
