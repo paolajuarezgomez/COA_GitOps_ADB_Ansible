@@ -49,14 +49,13 @@ jobs:
         run: go test -v -tags=unit
 
       - uses: actions/github-script@v6
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && ${{ success() }}
         env:
          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
          github-token: ${{ secrets.TOKEN }}
          script: |
-          const output = `#### Terraform Format and Style 🖌\`
-          ${{ steps.test.outputs.stdout }}\`
+          const output = `#### Terraform Test PASSED\`
           *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
           github.rest.issues.createComment({
             issue_number: context.issue.number,
