@@ -46,19 +46,24 @@ jobs:
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         env:
-          PLAN: "terraform\n${{ steps.test.outputs.stdout }}"
+         PLAN: "terratest\n${{ steps.test.outputs.stdout }}"
         with:
-          github-token: ${{ secrets.TOKEN }}
-          script: |
-            const output = `#### Terraform Test 🖌\`${{ steps.test.outcome }}\`
-            #### Terraform Plan 📖\`${{ steps.test.outcome }}\`
-    
-            <details><summary>Show Plan</summary>
-      
-            \`\`\`\n
-            ${process.env.PLAN}
-            \`\`\`
-            </details>
-            console.log(context)
+         github-token: ${{ secrets.TOKEN }}
+         script: |
+          const output = `#### Terraform Plan 📖\`${{ steps.test.outcome }}\`
+          
+          <details><summary>Show Plan</summary>
+          
+          \`\`\`${process.env.PLAN}\`\`\`
+          
+          </details>
+          
+          *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: output
+          })
       
           
