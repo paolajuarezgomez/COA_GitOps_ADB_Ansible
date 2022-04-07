@@ -9,12 +9,14 @@ jobs:
       - uses: actions/setup-go@v1
         with:
           go-version: 1.13
-      - uses: autero1/action-terraform@v0.1.0
-        with:
-          terraform_version: 0.12.21
+ 
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1.3.2
+     
       - name: Download Go Modules
         working-directory: test
         run: go mod download
+      
       - name: Run Go Tests
         working-directory: test
         run: go test -v -tags=unit
