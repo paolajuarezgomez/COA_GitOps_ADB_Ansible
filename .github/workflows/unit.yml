@@ -47,6 +47,14 @@ jobs:
         id: test
         working-directory: test
         run: go test -v -tags=unit
-         
-      - run: echo "Terratest ${{ steps.test.outputs }}"
+      - run: echo "Terratest ${{ steps.test.outputs.stdout }}"
+      
+      - uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        env:
+         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+        with:
+         github-token: ${{ secrets.TOKEN }}
+         script: |
+          const output = `#### Terratest\`${{  steps.plan.outputs.stdout }}\`
      
