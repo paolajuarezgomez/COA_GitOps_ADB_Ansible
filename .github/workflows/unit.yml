@@ -50,11 +50,9 @@ jobs:
       - run: echo "Terratest ${{ steps.test.outputs.stdout }}"
       
       - uses: actions/github-script@v6
-        if: github.event_name == 'pull_request'
-        env:
-         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+        id: set-result
         with:
-         github-token: ${{ secrets.TOKEN }}
-         script: 
-          const output = `#### Terratest\`${{  steps.plan.outputs.stdout }}\`
-     
+         script: return "Test ok!"
+         result-encoding: string
+      - name: Get result
+        run: echo "${{steps.set-result.outputs.result}}"
