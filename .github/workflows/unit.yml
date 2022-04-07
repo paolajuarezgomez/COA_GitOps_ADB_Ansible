@@ -48,5 +48,5 @@ jobs:
         working-directory: test
         run: go test -v -tags=unit
          
-      - run: Write-Output "Terratest ${{ steps.test.outputs }}"
+      - run: echo "Terratest ${{ steps.test.outputs }}"
      
