@@ -47,14 +47,15 @@ jobs:
         id: test
         working-directory: test
         run: go test -v -tags=unit
-    
-     
+         
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
-      - name: Get result
-        run: echo "${{steps.test.outputs.result}}"
-
-        
+        with:
+         github-token: ${{ secrets.TOKEN }}
+         script: |
+          const output = `#### Terratest 📖\`${{ steps.test.outcome }}\`
+          
+          
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         env:
