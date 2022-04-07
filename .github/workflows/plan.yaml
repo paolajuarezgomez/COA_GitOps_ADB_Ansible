@@ -80,12 +80,12 @@ jobs:
         github-token: ${{ secrets.TOKEN }}
         script: |
           const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-          #### Terraform Initialization ⚙️\`${{ steps.plan.outputs }}\`
-          #### Terraform Validation 🤖\`${{ steps.plan.outputs.stdout }}\`
+          #### Terraform Initialization ⚙️\`${{ steps.init.outcome}}\`
+          #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
           #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
           <details><summary>Show Plan</summary>
           \`\`\`\n
-          ${process.env.PLAN}
+          ${steps.plan.outputs.stdout}
           \`\`\`
           </details>
           *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
