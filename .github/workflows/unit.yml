@@ -55,6 +55,6 @@ jobs:
          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
          github-token: ${{ secrets.TOKEN }}
-         script: |
+         script: 
           const output = `#### Terratest\`${{  steps.plan.outputs.stdout }}\`
      
