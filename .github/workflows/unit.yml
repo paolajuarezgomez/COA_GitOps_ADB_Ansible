@@ -38,6 +38,7 @@ jobs:
         run: go mod download
       
       - name: Run Go Tests
+        id: test
         working-directory: test
         run: go test -v -tags=unit
     
@@ -47,15 +48,13 @@ jobs:
         with:
           github-token: ${{ secrets.TOKEN }}
           script: |
-            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-            #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
+            const output = `#### Terraform Test 🖌\`${{ steps.test.outcome }}\`
             <details><summary>Validation Output</summary>
             \`\`\`\n
-            ${{ steps.validate.outputs.stdout }}
+            ${{ steps.test.outputs.stdout }}
             \`\`\`
             </details>
-            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+            #### Terraform Plan 📖\`${{ steps.test.outcome }}\`
       
             <details><summary>Show Plan</summary>
       
