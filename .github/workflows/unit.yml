@@ -1,5 +1,11 @@
 name: Terraform Unit Tests
-on: push
+#on: push
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+  
 jobs:
   go-tests:
     name: Run Terratest Unit Tests
