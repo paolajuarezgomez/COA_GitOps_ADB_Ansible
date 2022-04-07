@@ -48,35 +48,14 @@ jobs:
         working-directory: test
         run: go test -v -tags=unit
          
-      - uses: actions/github-script@v6
-        if: github.event_name == 'pull_request'
+      - name: Add Comment to Pull Request if Success
+        if: ${{ success() }}
+        uses: actions/github-script@v6
         with:
-         github-token: ${{ secrets.TOKEN }}
-         script: |
-          const output = `#### Terratest 📖\`${{ steps.test.outcome }}\`
-          
-          
-      - uses: actions/github-script@v6
-        if: github.event_name == 'pull_request'
-        env:
-         PLAN: "terratest\n${{ steps.test.outputs.stdout }}"
-        with:
-         github-token: ${{ secrets.TOKEN }}
-         script: |
-          const output = `#### Terraform Plan 📖\`${{ steps.test.outcome }}\`
-          
-          <details><summary>Show Plan</summary>
-          
-          \`\`\`${process.env.PLAN}\`\`\`
-          
-          </details>
-          
-          *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: output
-          })
-      
-          
+          script: |
+            await github.rest.issues.createComment({
+            owner: context.repo.owner, 
+            repo: context.repo.repo, 
+            issue_number: ${{ env.pr_num }},
+            body: 'Its Success'
+            });
