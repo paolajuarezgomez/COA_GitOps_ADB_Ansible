@@ -92,7 +92,16 @@ jobs:
             body: output
           })
         
-        body: |
+    - name: Update comment success
+      uses: peter-evans/create-or-update-comment@v1
+      if: ${{ success() }}
+      env:
+          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+      with:
+          token: ${{ secrets.TOKEN }}}
+          repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
+          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          body: |
               ___
               ## Terraform Plan ![Terraform Plan](https://img.shields.io/badge/Terraform%20plan-passed-green)
               <details><summary>view plan</summary>
@@ -102,4 +111,3 @@ jobs:
               ```
               </p>
               </details>
-          
