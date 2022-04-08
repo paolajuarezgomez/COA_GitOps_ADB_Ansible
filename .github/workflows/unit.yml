@@ -49,8 +49,7 @@ jobs:
         working-directory: test
         run: go test -tags=unit
 
-      - uses: actions/github-script@v6
-        if: ${{ always() }}         
+      - uses: actions/github-script@v5       
         env:
          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
