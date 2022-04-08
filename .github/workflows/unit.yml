@@ -50,7 +50,7 @@ jobs:
         run: go test -v -tags=unit
 
       - uses: actions/github-script@v6
-        if: steps.test.outcome=='success'
+        if: ${{ always() }}         
         env:
          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
