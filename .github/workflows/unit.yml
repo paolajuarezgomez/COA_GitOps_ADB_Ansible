@@ -49,7 +49,7 @@ jobs:
         run: go test -v -tags=unit
 
       - uses: actions/github-script@v6
-        if: github.event_name == 'pull_request' && c
+        if: github.event_name == 'pull_request' && steps.test.outcome=='success'
         env:
          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
