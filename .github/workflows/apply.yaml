@@ -20,21 +20,11 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY}}
     
     steps:
-    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-    - run: echo "🐧 This job is now running on a ${{ runner.name }} server hosted by GitHub!"
-    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-    
+
     # Checkout the repository to the GitHub Actions runner
     - name: Check out repository code
       uses: actions/checkout@v2
     
-    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-    - run: echo  "The workflow is now ready to test your code on the runner."
-    - name: List files in the repository
-      run: |
-         ls ${{ github.workspace }}
-          
-        
     # Configure S3 backend
     - name: Configure S3 backend
       run: | 
