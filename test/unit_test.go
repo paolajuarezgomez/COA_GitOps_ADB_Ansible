@@ -11,7 +11,7 @@ import (
 func TestStaticSiteValidity(t *testing.T) {
 	t.Parallel()
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../terraform",
+		TerraformDir: ".",
 	})
 	output := terraform.InitAndPlan(t, terraformOptions)
 	assert.Contains(t, output, "3 to add, 0 to change, 0 to destroy")
