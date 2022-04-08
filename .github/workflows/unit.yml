@@ -1,10 +1,10 @@
 name: Terraform Unit Tests
 
 on:
-  push:
-   branches:
-    - 'release/**'
-  #pull_request:
+  #push:
+  # branches:
+  #  - 'release/**'
+  pull_request:
   
 jobs:
   go-tests:
