@@ -73,7 +73,7 @@ jobs:
     #- run: echo ${{ steps.plan.outputs.exitcode }}      
       
     - uses: actions/github-script@v6
-      if: steps.plan.outcome=='success'
+      #if: steps.plan.outcome=='success'
       env:
         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
       with:
