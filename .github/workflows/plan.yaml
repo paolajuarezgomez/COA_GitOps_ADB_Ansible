@@ -72,7 +72,8 @@ jobs:
     #- run: echo ${{ steps.plan.outputs.stderr }}
     #- run: echo ${{ steps.plan.outputs.exitcode }}      
       
-    - uses: actions/github-script@v5
+    - uses: actions/github-script@v6
+      if: github.event_name == 'push'
       env:
         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
       with:
