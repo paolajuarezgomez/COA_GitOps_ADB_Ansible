@@ -47,7 +47,7 @@ jobs:
       - name: Run Go Tests
         id: test
         working-directory: test
-        run: go test -v -tags=unit
+        run: go test -tags=unit
 
       - uses: actions/github-script@v6
         if: ${{ always() }}         
