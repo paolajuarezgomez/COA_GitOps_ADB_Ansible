@@ -49,7 +49,8 @@ jobs:
         working-directory: test
         run: go test -tags=unit
 
-      - uses: actions/github-script@v5       
+      - uses: actions/github-script@v6
+        if: github.event_name == 'push'
         env:
          PLAN: "terraform\n ${{ steps.test.outputs.stdout }}"
         with:
