@@ -55,7 +55,7 @@ jobs:
         with:
          github-token: ${{ secrets.TOKEN }}
          script: |
-          const output = `#### Terraform Test PASSED \`
+          const output = `#### Terratest 📖 success \    
           *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
           github.rest.issues.createComment({
             issue_number: context.issue.number,
