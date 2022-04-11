@@ -32,7 +32,7 @@ token
 * Add your ssh public and ssh private keys in the cers directory, they will be used to connect to the webservers nodes.
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
 * Define the values desired in the  **coa_demo.auto.tfvars** ( required ssh public key and ssh private key file´s names) 
-* Go to settings of your repo and active the use of workflows.
+* Go to settings of your repo and active the use of workflows.(* Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
 
 * The terraform code included in this demo will deploy the next resources:
