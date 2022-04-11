@@ -3,6 +3,11 @@ module test
 go 1.18
 
 require (
+	github.com/gruntwork-io/terratest v0.40.6
+	github.com/stretchr/testify v1.7.0
+)
+
+require (
 	cloud.google.com/go v0.83.0 // indirect
 	cloud.google.com/go/storage v1.10.0 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
@@ -14,7 +19,6 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/googleapis/gax-go/v2 v2.0.5 // indirect
-	github.com/gruntwork-io/terratest v0.40.6 // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-getter v1.5.9 // indirect
@@ -32,7 +36,6 @@ require (
 	github.com/mitchellh/go-testing-interface v1.0.0 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/tmccombs/hcl2json v0.3.3 // indirect
 	github.com/ulikunitz/xz v0.5.8 // indirect
 	github.com/zclconf/go-cty v1.9.1 // indirect
