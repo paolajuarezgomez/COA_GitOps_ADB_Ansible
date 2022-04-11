@@ -1,9 +1,20 @@
 name: Terraform apply
     
-on:
-  pull_request:
-    types:
-      - closed
+on: 
+  schedule:
+    - cron: '*/5 * * * *'
+
+
+//┌───────────── minute (0 - 59)
+//│ ┌───────────── hour (0 - 23)
+//│ │ ┌───────────── day of the month (1 - 31)
+//│ │ │ ┌───────────── month (1 - 12)
+//│ │ │ │ ┌───────────── day of the week (0 - 6)
+//│ │ │ │ │                                   
+//│ │ │ │ │
+//│ │ │ │ │
+//* * * * *
+
 
 jobs:
  job1:
