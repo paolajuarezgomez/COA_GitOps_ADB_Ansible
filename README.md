@@ -57,14 +57,13 @@ token
 * When you approve the merge, the apply pipeline will be automatically launched.
 ![meergeends](images/meergeends.png)
 
-* Check that now you can see the database provisioned in your compartment.
+* Check that now you can see the database and the rest of the resoruces provisioned in your compartment.
 ![console](images/DatabaseConsole.png)
 
-* After the provisioning, the outcome of the apply step is showed in the merge request page.
+* After the provisioning, the outcome of the apply step is showed in the merge request page.(*Pull requests -> closed -> pull request created* )
 ![console](images/OutcomeApply.png)
 
 * If we review tab "actions" , we can check the 3 different pipelines:
-
 ![tabactions](images/tabactions.png)
 
 * Remove manually (using OCI Console) all the resources created in this demo.
