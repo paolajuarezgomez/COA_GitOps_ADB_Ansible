@@ -46,10 +46,6 @@ token
 * This action will start the pipeline test and plan:
 ![tabactions](images/pipelines.png)
 
-* If we review the 3 different pipelines in the tab "actions":
-
-![tabactions](images/tabactions.png)
-
 * When the plan pipeline ends you can se the actions/github-script@v6  outcome, this allow you to review the plan outcome before approve the merge.
 ![output](images/PlanOutcome.png)
 
@@ -66,6 +62,10 @@ token
 
 * After the provisioning, the outcome of the apply step is showed in the merge request page.
 ![console](images/OutcomeApply.png)
+
+* If we review tab "actions" , we can check the 3 different pipelines:
+
+![tabactions](images/tabactions.png)
 
 * Remove manually (using OCI Console) all the resources created in this demo.
 
