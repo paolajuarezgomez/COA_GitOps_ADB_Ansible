@@ -15,5 +15,5 @@ func TestStaticSiteValidity(t *testing.T) {
 		TerraformDir: "../.",
 	})
 	output := terraform.InitAndPlan(t, terraformOptions)
-	assert.Contains(t, output, "47 to add, 0 to change, 0 to destroy.")
+	assert.Contains(t, output, "42 to add, 0 to change, 0 to destroy.")
 }
