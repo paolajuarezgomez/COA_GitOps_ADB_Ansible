@@ -28,13 +28,13 @@ token
 * *token* is a personal [github token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 * Clone this repo in GitHub and create you own repository.
-* The pipelines configuration is defined in .github/workflows, in this case we have created plan.yaml,  apply.yaml
+* The pipelines configuration is defined in .github/workflows, in this case we have created plan.yaml, unit.yaml and apply.yaml
 * Add your *api_private_key* to the file **user.pem**
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
-* Define the values of your *region* and *adb_password* in the file **adb.auto.tfvars**
-* Define the values of your *region* and *namespace* in the file **remote_backend.tf**
+* Define the values desired in the  **coa.auto.tfvars**
 
-* Change you repo code, for example change the ADB name, and do a "merge pull request" to deploy the changes.
+* Change you repo code, for example change the ADB name, and do a "merge pull request" to deploy the changes. It will deploy this enviroment:
+![mergepullrequest](images/pipeline1.png)
 ![mergepullrequest](images/pipeline1.png)
 
 * This is the outcome of actions/github-script@v6 , you can review the plan outcome before do the merge.
