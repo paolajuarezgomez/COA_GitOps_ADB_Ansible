@@ -31,7 +31,7 @@ token
 * The pipelines configuration is defined in .github/workflows, in this case we have created plan.yaml, unit.yaml and apply.yaml
 * Add your *api_private_key* to the file **user.pem**
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
-* Define the values desired in the  **coa.auto.tfvars**
+* Define the values desired in the  **coa_demo.auto.tfvars**
 
 * Change you repo code, for example change the ADB name, and do a "merge pull request" to deploy the changes. It will deploy this enviroment:
 ![mergepullrequest](images/pipeline1.png)
