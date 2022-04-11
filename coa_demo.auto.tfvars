@@ -101,9 +101,9 @@ adb_db_version     = "19c"
 
 #Requiered for Manual backup configuration
 #https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-manual.html#GUID-DD2F1114-72F4-4FA9-8524-49A5931057B8
-create_bucket      = "True"
-conf_manual_backup = "True"
-username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
-password           =  "CfH8MMLlV84ZM))4DY9)"
+create_bucket      = "False"
+conf_manual_backup = "False"
+#username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
+#password           =  "CfH8MMLlV84ZM))4DY9)"
 
    
