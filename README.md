@@ -8,8 +8,8 @@ GitHub Actions is a continuous integration and continuous delivery (CI/CD) platf
 During this UseCase we're going to:
 
 * Use Github Actions to build different pipelines.
-* Create a test pipeline.
-* Deploy IaC using Terraform
+* Create a test pipeline using Terratest.
+* Deploy IaC using Terraform.
 
 ## ✅ Usage
 
