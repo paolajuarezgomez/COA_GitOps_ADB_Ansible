@@ -13,7 +13,7 @@ variable "tenancy_id" {
 }
 
 # Get this from OCI > Identity > Users (for your user account)
-variable "user_ocid" {
+variable "user_id" {
   description = "Get this from OCI > Identity > Users (for your user account)"
 }
 
