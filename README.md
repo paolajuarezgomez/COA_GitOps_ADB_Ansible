@@ -37,7 +37,6 @@ token
 ![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png)
 
 * Create a new branch, change the repo files and publish the changes to the new branch. Open a "merge pull request" and check how the first two pipelines run:
-![tabactions](images/tabactions.png)
 
 * If we review the 3 different pipelines in the tab "actions" 
 ![tabactions](images/tabactions.png)
