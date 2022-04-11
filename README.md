@@ -35,7 +35,10 @@ token
 
 * Change you repo code, for example change the ADB name, and do a "merge pull request" to deploy the changes. It will deploy this enviroment:
 ![mergepullrequest](images/pipeline1.png)
-![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png.png)
+![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png)
+
+* If we review the 3 different pipelines in the tab "actions" 
+![tabactions](images/tabactions.png)
 
 * This is the outcome of actions/github-script@v6 , you can review the plan outcome before do the merge.
 ![output](images/OutcomePlan.png)
@@ -43,8 +46,6 @@ token
 * When you do the merge the workflow with the apply job is launched.
 ![meergeends](images/meergeends.png)
 
-* If we review the pipelines ( plan and apply) in the tab "actions" 
-![tabactions](images/tabactions.png)
 
 * We can see the different workflows/pipelines steps...
 
