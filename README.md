@@ -30,8 +30,9 @@ token
 * Clone this repo in GitHub and create you own repository.
 * The pipelines configuration is defined in .github/workflows, in this case we have created plan.yaml, unit.yaml and apply.yaml
 * Add your *api_private_key* to the file **user.pem**
+* Add your public and private rda in the cers directory, this will be used to connect to the webservers nodes.
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
-* Define the values desired in the  **coa_demo.auto.tfvars**
+* Define the values desired in the  **coa_demo.auto.tfvars** ( required rda certs names ) 
 
 * The terraform code included in this demo will deploy the next resources:
 ![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png)
