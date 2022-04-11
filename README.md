@@ -32,18 +32,16 @@ token
 * The pipelines/workflows configuration are defined in the directory **.github/workflows**, in this case we have created three different workdlows: **plan.yaml, unit.yaml** and **apply.yaml**
 * Add your *api_private_key* to the file **user.pem**
 * Add your ssh public and ssh private keys in the cers directory, they will be used to connect to the webservers nodes.
-* Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* 
-* Define the values desired in the  **coa_demo.auto.tfvars** ( required ssh public key and ssh private key file´s names and your compartment_ocid) 
-* Go to settings of your repo and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
-
+* Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the value of your *tenancy_ocid* 
+* Define the values desired in the  **coa_demo.auto.tfvars** ( mandatory required ssh public key and ssh private key file´s names and your compartment_ocid) 
+* Go to settings of your repo, and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
 * The terraform code included in this demo will deploy the next resources:
 ![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png)
 
-* Create a new branch, change the repo files and publish the changes to the new branch. 
+* Create a new branch, make changes in the repo files and publish the changes to the new branch. 
 * Open a "merge pull request" and check how the first two pipelines run:
 ![tabactions](images/Pullreques.png)
-
 
 ![tabactions](images/Pullreques1.png)
 
