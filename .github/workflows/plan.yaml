@@ -21,8 +21,6 @@ jobs:
       TF_VAR_user_ocid:  ${{ secrets.USER_ID }}
       TF_VAR_region: ${{ secrets.REGION}}
       TF_ACTION_WORKSPACE: "default"
-      AWS_ACCESS_KEY_ID: ${{ secrets.ACCES_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY}}
 
             
     #runs-on: [self-hosted, pjuarez]
@@ -42,17 +40,7 @@ jobs:
     - name: List files in the repository
       run: |
          ls ${{ github.workspace }}
-         
-    # Configure S3 backend
-    - name: Configure S3 backend
-      run: | 
-        echo  "[default]" > cred_store
-        echo "aws_access_key_id= ${{ secrets.access_key_id}}" >> cred_store
-        echo "aws_secret_access_key= ${{ secrets.secret_access_key}}" >> cred_store
-        cat cred_store
-        echo ${{ secrets.secret_access_key}}
-        echo ${{ secrets.REGION}}
-        
+
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1.3.2
       #with:
