@@ -42,23 +42,14 @@ token
 * If we review the 3 different pipelines in the tab "actions" 
 ![tabactions](images/tabactions.png)
 
-* This is the outcome of actions/github-script@v6 , you can review the plan outcome before do the merge.
-![output](images/OutcomePlan.png)
+* This is the outcome of actions/github-script@v6 for the plan pipeline, you can review the plan outcome before do the merge.
+![output](images/PlanOutcome.png)
 
-* When you do the merge the workflow with the apply job is launched.
+* This is the outcome of actions/github-script@v6 for the test pipeline.
+![output](images/testOutcome.png)
+
+* When you do the merge the apply pipeline will be launched.
 ![meergeends](images/meergeends.png)
-
-
-* We can see the different workflows/pipelines steps...
-
-![workflow](images/workflow.png)
-
-![plan](images/Plan.png)
-![plan1](images/Plan1.png)
-![apply](images/Apply.png)
-![apply1](images/Apply1.png)
-
-![Provisioning](images/Provisioning.png)
 
 * Check that now you can see the database provisioned in your compartment.
 ![console](images/console.png)
@@ -66,7 +57,7 @@ token
 * After the provisioning, the outcome of the apply step is showed in the merge request page.
 ![console](images/OutcomeApply.png)
 
-* Remove manually (using OCI Console) the ADB created previously.
+* Remove manually (using OCI Console) all the resources created in this demo.
 
 If you need help, ask us in the slack channel #iac-enablement
 
