@@ -72,4 +72,7 @@ token
 If you need help, ask us in the slack channel #iac-enablement
 
 ## ✅ References
-* [https://acloudguru.com/blog/engineering/how-to-use-github-actions-to-automate-terraform](https://acloudguru.com/blog/engineering/how-to-use-github-actions-to-automate-terraform)
+* [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+* [Terratest](https://terratest.gruntwork.io/)
+* [Automate Terraform Testing with GitHub Actions and Terratest](https://medium.com/@petriautero/automate-terraform-testing-with-github-actions-and-terratest-78d74331fdf8)
+
