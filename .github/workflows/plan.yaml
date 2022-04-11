@@ -5,9 +5,9 @@ on:
   # branches:
   #  - 'release/**'
   #pull_request:
-  push:
-    branches:
-      - 'release/**'
+  #push:
+  #  branches:
+  #    - 'release/**'
   pull_request:
     branches: 
       - main 
