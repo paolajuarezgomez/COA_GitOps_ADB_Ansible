@@ -35,7 +35,7 @@ token
 
 * Change you repo code, for example change the ADB name, and do a "merge pull request" to deploy the changes. It will deploy this enviroment:
 ![mergepullrequest](images/pipeline1.png)
-![mergepullrequest](images/pipeline1.png)
+![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png.png)
 
 * This is the outcome of actions/github-script@v6 , you can review the plan outcome before do the merge.
 ![output](images/OutcomePlan.png)
