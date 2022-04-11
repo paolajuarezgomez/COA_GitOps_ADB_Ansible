@@ -33,9 +33,11 @@ token
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
 * Define the values desired in the  **coa_demo.auto.tfvars**
 
-* Change you repo code, for example change the ADB name, and do a "merge pull request" to deploy the changes. It will deploy this enviroment:
-![mergepullrequest](images/pipeline1.png)
+* The terraform code included in this demo will deploy the next resources:
 ![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png)
+
+* Create a new branch, change the repo files and publish the changes to the new branch. Open a "merge pull request" and check how the first two pipelines run:
+![tabactions](images/tabactions.png)
 
 * If we review the 3 different pipelines in the tab "actions" 
 ![tabactions](images/tabactions.png)
