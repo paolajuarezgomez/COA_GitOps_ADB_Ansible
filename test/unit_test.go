@@ -17,5 +17,5 @@ func TestStaticSiteValidity(t *testing.T) {
 	output := terraform.InitAndPlan(t, terraformOptions)
 	maxRetries := 10
 	timeBetweenRetries := 5
-	assert.Contains(t, output, "Plan: 36 to add, 0 to change, 0 to destroy.")
+	assert.Contains(t, output, "36 to add, 0 to change, 0 to destroy.")
 }
