@@ -13,12 +13,13 @@ During this UseCase we're going to:
 
 ## ✅ Usage
 
-The first thing you’ll need to do before your GitHub Actions can run is to add your credentials to the repository. To do this you will need to follow these steps:
+* Clone this repo in GitHub and create you own repository.
+* The first thing you’ll need to do before your GitHub Actions can run is to add your credentials to the repository. To do this you will need to follow these steps:
 
-* Navigate to your repository and select the Settings tab.
-* Once there you should see on the left a Secrets section third from the bottom of the list, click on that.
-* Click on the New repository secret button.
-* Add the next secrets:
+   * Navigate to your repository and select the Settings tab.
+   * Once there you should see on the left a Secrets section third from the bottom of the list, click on that.
+   * Click on the New repository secret button. 
+   * Add the next secrets:
 
 ````
 user_id
@@ -26,13 +27,13 @@ api_fingerprint
 token
 ````
 * *token* is a personal [github token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
-
-* Clone this repo in GitHub and create you own repository.
 * The pipelines configuration is defined in .github/workflows, in this case we have created plan.yaml, unit.yaml and apply.yaml
 * Add your *api_private_key* to the file **user.pem**
 * Add your ssh public and ssh private keys in the cers directory, they will be used to connect to the webservers nodes.
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
 * Define the values desired in the  **coa_demo.auto.tfvars** ( required ssh public key and ssh private key file´s names) 
+* Go to settings of your repo and active the use of workflows.
+
 
 * The terraform code included in this demo will deploy the next resources:
 ![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png)
