@@ -1,14 +1,16 @@
 # COA Deploy TRF with GitHub UseCase. 
-# -- How to build a pipeline with GitHub Action  --
+# -- How to build pipeline with GitHub Action  --
 
 ## ✅ Showcase
 
 GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
 
+A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file checked in to your repository and will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule.
+
 During this UseCase we're going to:
 
-* Use Github Actions to build different pipelines.
-* Create a test pipeline using Terratest.
+* Use Github Actions to build different pipelines/workflows.
+* Create a test pipeline/workflow using Terratest.
 * Deploy IaC using Terraform.
 
 ## ✅ Usage
@@ -26,12 +28,12 @@ user_id
 api_fingerprint
 token
 ````
-* *token* is a personal [github token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
-* The pipelines configuration is defined in .github/workflows, in this case we have created **plan.yaml, unit.yaml** and **apply.yaml**
+* The *token* secret is a personal [github token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+* The pipelines/workflows configuration are defined in the directory **.github/workflows**, in this case we have created three different workdlows: **plan.yaml, unit.yaml** and **apply.yaml**
 * Add your *api_private_key* to the file **user.pem**
 * Add your ssh public and ssh private keys in the cers directory, they will be used to connect to the webservers nodes.
-* Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
-* Define the values desired in the  **coa_demo.auto.tfvars** ( required ssh public key and ssh private key file´s names) 
+* Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* 
+* Define the values desired in the  **coa_demo.auto.tfvars** ( required ssh public key and ssh private key file´s names and your compartment_ocid) 
 * Go to settings of your repo and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
 
