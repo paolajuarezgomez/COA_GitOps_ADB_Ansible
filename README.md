@@ -1,15 +1,15 @@
 # COA Deploy TRF with GitHub UseCase. 
 # -- How to build a pipeline with GitHub Action  --
 
-This example creates an Autonomous Database (JSON) exposed to the public Internet.
-
 ## ✅ Showcase
+
+GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
 
 During this UseCase we're going to:
 
-* Use Github Actions to build a pipeline.
-* Use OCI S3 as a backed for terraform.
-* Deploy IaC using Terraform, in this case an ADB resource.
+* Use Github Actions to build different pipelines.
+* Create a test pipeline.
+* Deploy IaC using Terraform
 
 ## ✅ Usage
 
@@ -27,18 +27,8 @@ token
 ````
 * *token* is a personal [github token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-* We want to use a [S3-Compatible Backend](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) , read the documentation carefully. You need an OCI object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
-
-* Create a ["Customer Secret keys"](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm#To4) also named as "Amazon S3 Compatibility API keys". A Customer Secret key consists of an Access Key/Secret key pair. 
-* Add the *Custome Secret Keys* varibales to the previus ones:
-
-````
-access_key_id 
-secret_access_key 
-````
-
-* Clone this repo in OraHub, GitLab or GitHub and create you own repository.
-* The pipelines configuration is defined in .github/workflows, in this case we have created plan.yaml and apply.yaml
+* Clone this repo in GitHub and create you own repository.
+* The pipelines configuration is defined in .github/workflows, in this case we have created plan.yaml,  apply.yaml
 * Add your *api_private_key* to the file **user.pem**
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your *tenancy_ocid* and *compartment_ocid*
 * Define the values of your *region* and *adb_password* in the file **adb.auto.tfvars**
