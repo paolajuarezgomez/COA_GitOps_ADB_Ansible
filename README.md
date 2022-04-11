@@ -36,9 +36,10 @@ token
 * The terraform code included in this demo will deploy the next resources:
 ![COA-Demo-Diagram.png](images/COA-Demo-Diagram.png)
 
-* Create a new branch, change the repo files and publish the changes to the new branch. Open a "merge pull request" and check how the first two pipelines run:
+* Create a new branch, change the repo files and publish the changes to the new branch. 
+* Open a "merge pull request" and check how the first two pipelines run:
 
-* If we review the 3 different pipelines in the tab "actions" 
+* If we review the 3 different pipelines in the tab "actions":
 ![tabactions](images/tabactions.png)
 
 * This is the outcome of actions/github-script@v6 for the plan pipeline, you can review the plan outcome before do the merge.
