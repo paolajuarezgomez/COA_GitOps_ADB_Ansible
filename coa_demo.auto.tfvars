@@ -104,6 +104,6 @@ adb_db_version     = "19c"
 create_bucket      = "False"
 conf_manual_backup = "False"
 #username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
-#password           =  "CfH8MMLlV84ZM))4DY9)"
+#password           =  ""
 
    
