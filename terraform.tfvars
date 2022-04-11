@@ -18,4 +18,4 @@ tenancy_id = "ocid1.tenancy.oc1..aaaaaaaaxzpxbcag7zgamh2erlggqro3y63tvm2rbkkjz4z
 private_key_path     = "user.pem"
 
 # region (us-phoenix-1, ca-toronto-1, etc)
-#region = "eu-frankfurt-1"
+region = "eu-frankfurt-1"
