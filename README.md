@@ -38,21 +38,31 @@ token
 
 * Create a new branch, change the repo files and publish the changes to the new branch. 
 * Open a "merge pull request" and check how the first two pipelines run:
+![tabactions](images/Pullreques.png)
+
+
+![tabactions](images/Pullreques1.png)
+
+* This action will start the pipeline test and plan:
+![tabactions](images/pipelines.png)
 
 * If we review the 3 different pipelines in the tab "actions":
+
 ![tabactions](images/tabactions.png)
 
-* This is the outcome of actions/github-script@v6 for the plan pipeline, you can review the plan outcome before do the merge.
+* When the plan pipeline ends you can se the actions/github-script@v6  outcome, this allow you to review the plan outcome before approve the merge.
 ![output](images/PlanOutcome.png)
+
+![output](images/Planends.png)
 
 * This is the outcome of actions/github-script@v6 for the test pipeline.
 ![output](images/testOutcome.png)
 
-* When you do the merge the apply pipeline will be launched.
+* When you approve the merge, the apply pipeline will be automatically launched.
 ![meergeends](images/meergeends.png)
 
 * Check that now you can see the database provisioned in your compartment.
-![console](images/console.png)
+![console](images/DatabaseConsole.png)
 
 * After the provisioning, the outcome of the apply step is showed in the merge request page.
 ![console](images/OutcomeApply.png)
