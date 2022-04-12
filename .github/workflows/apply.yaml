@@ -1,7 +1,11 @@
 name: Terraform apply scheduled    
 on: 
- schedule:
-   - cron: '15 12 * * *'
+  pull_request:
+    types:
+      - closed
+
+# schedule:
+#   - cron: '15 12 * * *'
 
 #┌───────────── minute (0 - 59)
 #│ ┌───────────── hour (0 - 23)
