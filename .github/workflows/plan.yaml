@@ -21,25 +21,28 @@ jobs:
       TF_VAR_user_id:  ${{ secrets.USER_ID }}
       TF_VAR_region: ${{ secrets.REGION}}
       TF_ACTION_WORKSPACE: "default"
+      AWS_ACCESS_KEY_ID: ${{ secrets.ACCES_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY}}
 
             
     #runs-on: [self-hosted, pjuarez]
     runs-on: ubuntu-latest
     
     steps:
-    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-    - run: echo "🐧 This job is now running on a ${{ runner.name }} server hosted by GitHub!"
-    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-    
+
     # Checkout the repository to the GitHub Actions runner
     - name: Check out repository code
       uses: actions/checkout@v2
     
-    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-    - run: echo  "The workflow is now ready to test your code on the runner."
-    - name: List files in the repository
-      run: |
-         ls ${{ github.workspace }}
+    # Configure S3 backend
+    - name: Configure S3 backend
+      run: | 
+        echo  "[default]" > cred_store
+        echo "aws_access_key_id= ${{ secrets.access_key_id}}" >> cred_store
+        echo "aws_secret_access_key= ${{ secrets.secret_access_key}}" >> cred_store
+        cat cred_store
+        echo ${{ secrets.secret_access_key}}
+        echo ${{ secrets.REGION}}
 
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1.3.2
