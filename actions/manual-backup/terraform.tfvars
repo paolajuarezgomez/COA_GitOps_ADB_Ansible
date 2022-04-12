@@ -15,7 +15,7 @@ user_id = "ocid1.user.oc1..aaaaaaaamoz7ype3cfnznsrzxaw3qrq4sjym2mqfcm6fgj3inli2l
 fingerprint = "e5:a5:d3:a1:64:37:fa:73:9f:99:51:c4:2c:55:fc:7f"
 
 # this is the full path on your local system to the private key used for the API key pair
-private_key_path = "/Users/pjuarez/.oci/oci_api_key.pem"
+private_key_path = "../../user.pem"
 
 # region (us-phoenix-1, ca-toronto-1, etc)
 region = "eu-frankfurt-1"
