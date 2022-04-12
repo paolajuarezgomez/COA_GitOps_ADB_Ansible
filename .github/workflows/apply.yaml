@@ -1,7 +1,7 @@
 name: Terraform apply scheduled    
 on: 
  schedule:
-  - cron: '45 12 * * *'
+  - cron: '55 12 * * *'
 
 #┌───────────── minute (0 - 59)
 #│ ┌───────────── hour (0 - 23)
