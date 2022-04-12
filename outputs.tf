@@ -2,19 +2,7 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
 
-
 locals {
-
-  #########################
-  ## ADB
-  #########################
-  #
-  # adb_details = {
-  #   adb            = module.adb.adb_database
-  #  wallet_content = module.adb.adb_database.adb_wallet_content
-  # }
-
-
 
   #########################
   ## Networking Details
@@ -134,12 +122,12 @@ locals {
 output "COA_Demo_Details" {
   value = {
     automation_run_by  = data.oci_identity_user.coa_demo_executer.name,
-    networking_details = local.networking_details,
-    compute_details    = local.compute_details,
     lbaas_details      = local.lbaas_details,
-    bucketname         = data.oci_objectstorage_objects.test_objects.bucket
-    adb                = module.adb[*].adb_database.adb_database_id
-    region             = var.region
+    bucketname         = data.oci_objectstorage_objects.test_objects.bucket,
+    region             = var.region,
+    adb                = module.adb[*].adb_database.adb_database_id,
+    cpu                = module.adb[*].adb_database.adb_database_id
+    
   }
 }
 
