@@ -57,6 +57,7 @@ jobs:
       run: terraform plan -no-color
     
     - run: echo ${{github.event_name}}
+    - run: echo ${{github.event.pull_request.merged}}
         
     - name: Terraform apply
       if: github.ref == 'refs/heads/main'
