@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket   = "${var.names_prefix}bucket"
+    bucket   = "coa-demo-bucket"
     key      = "terraform.tfstate"
     # Add your region
     region   = "eu-frankfurt-1"
