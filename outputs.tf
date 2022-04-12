@@ -126,7 +126,7 @@ output "COA_Demo_Details" {
     bucketname         = data.oci_objectstorage_objects.test_objects.bucket,
     region             = var.region,
     adb                = module.adb[*].adb_database.adb_database_id,
-    cpu                = module.adb[*].adb_database.adb_database_id
+    cpu                = module.adb[*].adb_database.cpu_db 
     
   }
 }
