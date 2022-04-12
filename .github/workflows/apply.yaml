@@ -4,7 +4,7 @@ on:
 #    types:
 #      - closed
   schedule:
-    - cron: '00 12 * * *'
+    - cron: '5 12 * * *'
 
 #┌───────────── minute (0 - 59)
 #│ ┌───────────── hour (0 - 23)
