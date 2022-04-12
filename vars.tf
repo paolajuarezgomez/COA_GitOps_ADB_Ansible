@@ -259,6 +259,12 @@ variable "conf_manual_backup" {
   description = "condition to conf manua backup"
 }
 
+variable "cpu_core_count" {
+  type        = string
+  default     = "1"
+  description = "cpu database"
+}
+
 variable "conn_db" {
   default = ""
 }
