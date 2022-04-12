@@ -56,7 +56,10 @@ jobs:
       id: plan
       run: terraform plan -no-color
     
+    - run: echo ${{github.event_name}}
+        
     - name: Terraform apply
+      if: github.ref == 'refs/heads/main'
       id: apply
       run: terraform apply -auto-approve  
       
