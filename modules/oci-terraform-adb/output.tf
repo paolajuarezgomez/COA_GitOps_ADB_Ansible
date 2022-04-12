@@ -7,7 +7,7 @@ output "adb_database" {
     connection_urls    = oci_database_autonomous_database.adb_database.connection_urls
     adb_wallet_content = oci_database_autonomous_database_wallet.adb_database_wallet.content
     conn_db            = oci_database_autonomous_database.adb_database.connection_strings
-    cpu_db             = oci_database_autonomous_database.adb_database.connection_strings
+    cpu_db             = oci_database_autonomous_database.adb_database.cpu_core_count
 
   }
 }
