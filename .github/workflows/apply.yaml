@@ -2,7 +2,7 @@ name: Terraform apply scheduled
 on: 
  pull_request:
     types:
-      -closed
+      - closed
     branches: 
       - main 
  schedule:
