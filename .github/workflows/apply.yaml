@@ -6,7 +6,7 @@ on:
     branches: 
       - main 
  schedule:
-    - cron: '20 12 * * *'
+    - cron: '30 12 * * *'
 
 #┌───────────── minute (0 - 59)
 #│ ┌───────────── hour (0 - 23)

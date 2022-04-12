@@ -95,8 +95,8 @@ install_product = "Flask"
 deploy_adb         = "True"
 adb_password       = "TestATP2022."
 adb_workload       = "OLTP"
-adb_db_name        = "ADBCOADEMO"
-adb_display_name   = "ADBCOADEMO"
+adb_db_name        = "ADBCOADEMO1"
+adb_display_name   = "ADBCOADEMO1"
 adb_db_version     = "19c"
 
 #Requiered for Manual backup configuration
