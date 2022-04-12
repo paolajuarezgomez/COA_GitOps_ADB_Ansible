@@ -29,6 +29,15 @@ api_fingerprint
 token
 ````
 * The *token* secret is a personal [github token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+* We want to use a [S3-Compatible Backend](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) , read the documentation carefully. You need an OCI object storage [bucket](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformUsingObjectStore.htm) called *"terraform-backend"*.
+
+* Create a ["Customer Secret keys"](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm#To4) also named as "Amazon S3 Compatibility API keys". A Customer Secret key consists of an Access Key/Secret key pair. 
+* Add the *Custome Secret Keys* varibales to the previus ones:
+
+````
+access_key_id 
+secret_access_key 
+````
 * The pipelines/workflows configuration are defined in the directory **.github/workflows**, in this case we have created three different workdlows: **plan.yaml, unit.yaml** and **apply.yaml**
 * Add your *api_private_key* to the file **user.pem**
 * Add your ssh public and ssh private keys in the cers directory, they will be used to connect to the webservers nodes.
