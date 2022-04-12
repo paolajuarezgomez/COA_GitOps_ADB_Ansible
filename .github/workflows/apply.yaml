@@ -1,4 +1,4 @@
-name: Terraform apply scheduled    
+name: Terraform apply     
 on: 
   pull_request:
     types:
@@ -20,7 +20,7 @@ on:
 jobs:
  job1:
     name: 'Terraform Apply'    
-    #if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.TOKEN }}
@@ -61,7 +61,6 @@ jobs:
       run: terraform plan -no-color
     
     - name: Terraform apply
-      if: github.ref == 'refs/heads/main'
       id: apply
       run: terraform apply -auto-approve  
       
