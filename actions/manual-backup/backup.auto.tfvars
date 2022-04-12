@@ -1,3 +1,5 @@
 
 
 adb_id ="ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljrttkvkkiahq4bkvgw7iu32ls2amtl2ldx7o76iic6zsxantt4uvrq"
+AWS_ACCESS_KEY_ID="427e334ee8c194f49d14c9a94d03cddc738c884f"
+AWS_SECRET_ACCESS_KEY="w160x38rmAnd53cG0oQhvnCFflfFvtBFcKAJiFi0SLM="
