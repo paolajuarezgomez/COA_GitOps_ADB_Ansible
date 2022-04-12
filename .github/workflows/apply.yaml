@@ -38,6 +38,16 @@ jobs:
       #with:
       #  terraform_wrapper: false
         
+      # Configure S3 backend
+    - name: Configure S3 backend
+      run: | 
+        echo  "[default]" > cred_store
+        echo "aws_access_key_id= ${{ secrets.access_key_id}}" >> cred_store
+        echo "aws_secret_access_key= ${{ secrets.secret_access_key}}" >> cred_store
+        cat cred_store
+        echo ${{ secrets.secret_access_key}}
+        echo ${{ secrets.REGION}}
+        
     - name: Terraform Init
       id: init
       run: terraform init
