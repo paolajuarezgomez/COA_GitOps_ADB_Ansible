@@ -4,7 +4,7 @@ locals {
 
 
 resource "oci_database_autonomous_database_backup" "autonomous_database_backup" {
-  count = run_manual_backup == "True" ? 1 : 0
+  count = var.run_manual_backup == "True" ? 1 : 0
 
   # Create the backup only if the autonomous database id is provided and has been configured for backups.
 
