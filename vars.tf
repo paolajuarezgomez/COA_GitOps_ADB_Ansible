@@ -282,3 +282,7 @@ variable "password" {
   default = ""
   sensitive   = true
 }
+
+variable "run_manual_backup" {
+  default = "false"
+}
