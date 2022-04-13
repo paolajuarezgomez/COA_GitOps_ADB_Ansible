@@ -107,7 +107,8 @@ data "oci_database_autonomous_database_backups" "test_autonomous_database_backup
 
 data "oci_database_autonomous_database" "test_autonomous_database" {
 	#Required
-	autonomous_database_id = module.adb[*].adb_database.adb_database_id
+	#autonomous_database_id = module.adb[*].adb_database.adb_database_id
+  autonomous_database_id = module.adb.adb_database.adb_database_id
 }
 
 data "oci_objectstorage_objects" "test_objects" {
