@@ -10,7 +10,7 @@ resource "oci_database_autonomous_database_backup" "autonomous_database_backup" 
 
   #Required
   #autonomous_database_id = module.adb[*].adb_database.adb_database_id
-  autonomous_database_id = data.oci_database_autonomous_database_backups.test_autonomous_database_backups.autonomous_database_id
+  autonomous_database_id = oci_database_autonomous_database.test_autonomous_database.id
   display_name           = "Manual_Backup_${local.current_time}"
 
   depends_on = [null_resource.configure_backup]
