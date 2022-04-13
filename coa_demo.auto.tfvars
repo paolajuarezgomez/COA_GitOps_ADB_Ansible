@@ -93,7 +93,7 @@ install_product = "Flask"
 #############################
 
 deploy_adb         = "True"
-#adb_password       = "TestATP2022."
+#adb_password >>>  Stored in a github secret as adb_password
 adb_workload       = "OLTP"
 adb_db_name        = "ADBCOADEMO1"
 adb_display_name   = "ADBCOADEMO1"
@@ -106,6 +106,6 @@ create_bucket      = "True"
 conf_manual_backup = "True"
 run_manual_backup = "True"
 username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
-#password           =  "CfH8MMLlV84ZM))4DY9)"
+#password  >>>  Stored in a github secret as password
 
    
