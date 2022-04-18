@@ -38,6 +38,16 @@ token
 access_key_id 
 secret_access_key 
 ````
+* If you want to deploy an adb include the admin password:
+
+````
+adb_password
+````
+* If you want to configure the manual backup from the previus adb include the credential password and remember to add you username in the **coa_demo.auto.tfvars** file
+
+````
+password
+````
 * The pipelines/workflows configuration are defined in the directory **.github/workflows**, in this case we have created three different workdlows: **plan.yaml, unit.yaml** and **apply.yaml**
 * Add your *api_private_key* to the file **user.pem**
 * Add your ssh public and ssh private keys in the cers directory, they will be used to connect to the webservers nodes.
