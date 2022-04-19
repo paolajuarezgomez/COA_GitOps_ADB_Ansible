@@ -7,6 +7,7 @@
 
 # default compartment 
 default_compartment_id = "ocid1.compartment.oc1..aaaaaaaaes3c3pxlxbcd2upv4vh7wbdfd7vgywuaa75izuu3otrb2omhekaa"
+region= "uk-london-1"
 
 #############################
 # naming convension
@@ -81,7 +82,9 @@ ssh_private_key_path = "./certs/id_rsa"
 shape = "VM.Standard1.1"
 
 # The name of the image to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the specific image name in the target region.
-image_name = "Oracle-Linux-8.5-2022.04.04-0"
+#image_name = "Oracle-Linux-8.5-2022.04.04-0"
+image_name = "Oracle-Linux-7.9-2022.04.04-0"
+
 
 # Which product to install
 # Accepted values: ["Apache", "Nginx", "Flask"] 
