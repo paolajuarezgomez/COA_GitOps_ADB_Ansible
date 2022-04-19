@@ -102,7 +102,7 @@ cpu_core_count     = "1"
 
 #Requiered for Manual backup configuration
 #https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-manual.html#GUID-DD2F1114-72F4-4FA9-8524-49A5931057B8
-create_bucket      = "True"
+create_bucket      = "False"
 conf_manual_backup = "False"
 run_manual_backup = "False"
 username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
