@@ -7,6 +7,7 @@
 
 # default compartment 
 default_compartment_id = "ocid1.compartment.oc1..aaaaaaaaes3c3pxlxbcd2upv4vh7wbdfd7vgywuaa75izuu3otrb2omhekaa"
+region= "uk-london-1"
 
 #############################
 # naming convension
