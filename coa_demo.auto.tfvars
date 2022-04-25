@@ -98,8 +98,8 @@ install_product = "Flask"
 deploy_adb         = "False"
 #adb_password >>>  Stored in a github secret as adb_password
 adb_workload       = "OLTP"
-adb_db_name        = "ADBCOADEMO1"
-adb_display_name   = "ADBCOADEMO1"
+adb_db_name        = "ADBCOADEMO"
+adb_display_name   = "ADBCOADEMO"
 adb_db_version     = "19c"
 cpu_core_count     = "1"
 
