@@ -95,7 +95,7 @@ install_product = "Flask"
 # OCI COA ADB
 #############################
 
-deploy_adb         = "False"
+deploy_adb         = "True"
 #adb_password >>>  Stored in a github secret as adb_password
 adb_workload       = "OLTP"
 adb_db_name        = "ADBCOADEMO"
