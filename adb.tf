@@ -40,7 +40,7 @@ module "adb" {
     rotate_key_trigger               = null
     scheduled_operations             = []
     standby_whitelisted_ips          = []
-    state                            = "AVAILABLE"
+    state                            = var.adb_state
     subnet_id                        = oci_core_subnet.coa_atp_private_subnet.id
     nsg_ids                          = tolist([oci_core_network_security_group.ATPSecurityGroup.id])
     whitelisted_ips                  = []
