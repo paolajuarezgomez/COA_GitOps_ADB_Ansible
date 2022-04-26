@@ -294,19 +294,23 @@ variable "conf_manual_backup" {
 }
 
 variable "run_manual_backup" {
-  default = "false"
+  type        = string
+  default = "False"
 }
 
 variable "conf_mon" {
-  default = "false"
+  type        = string
+  default = "False"
 }
 
 variable "auto_scaling" {
-  default = "true"
+  type        = string
+  default = "True"
 }
 
 
 variable "adb_state" {
+  type        = string
   #state - (Optional) (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
   default = "AVAILABLE"
 }
