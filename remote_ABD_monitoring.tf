@@ -73,7 +73,7 @@ resource "oci_monitoring_alarm" "oci_atp_cpu_critical" {
 count = var.conf_mon == "True" ? 1 : 0
 #Required
 compartment_id = var.default_compartment_id
-destinations = [data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id]
+destinations = data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id
 display_name = "oci_atp_cpu_critical"
 is_enabled = var.alarm_enabled
 metric_compartment_id = var.default_compartment_id
