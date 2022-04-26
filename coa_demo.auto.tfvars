@@ -35,7 +35,6 @@ vcn_cidr = "10.0.0.0/16"
 # private subnet CIDR
 private_subnet_cidr = "10.0.0.0/24"
 
-
 # public subnet CIDR
 public_subnet_cidr = "10.0.10.0/24"
 
@@ -85,7 +84,6 @@ shape = "VM.Standard1.1"
 #image_name = "Oracle-Linux-8.5-2022.04.04-0"
 image_name = "Oracle-Linux-7.9-2022.04.04-0"
 
-
 # Which product to install
 # Accepted values: ["Apache", "Nginx", "Flask"] 
 install_product = "Flask"
@@ -110,6 +108,10 @@ data_storage_size_in_tbs   = "1"
 #############################
 
 auto_scaling = "True"
+
+#The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+adb_state = "AVAILABLE"
+
 #Requiered for Manual backup configuration
 #https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-manual.html#GUID-DD2F1114-72F4-4FA9-8524-49A5931057B8
 create_bucket      = "False"
@@ -117,6 +119,8 @@ conf_manual_backup = "False"
 run_manual_backup = "False"
 username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
 #password  >>>  Stored in a github secret as password
+
+#To configure events and alarms of CPU
 conf_mon = "True"
 
 
