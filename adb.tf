@@ -27,7 +27,7 @@ module "adb" {
     defined_tags                     = {}
     freeform_tags                    = {}
     is_access_control_enabled        = null
-    is_auto_scaling_enabled          = true
+    is_auto_scaling_enabled          = var.auto_scaling
     is_data_guard_enabled            = false
     is_free_tier                     = false
     is_mtls_connection_required      = true
