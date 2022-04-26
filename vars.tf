@@ -305,6 +305,13 @@ variable "auto_scaling" {
   default = "true"
 }
 
+
+variable "adb_state" {
+  #state - (Optional) (Updatable) The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
+  default = "AVAILABLE"
+}
+
+
 #######################
 ##### Event Rule   ####
 #######################
