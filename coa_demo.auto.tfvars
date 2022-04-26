@@ -115,9 +115,10 @@ conf_manual_backup = "False"
 run_manual_backup = "False"
 username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
 #password  >>>  Stored in a github secret as password
-
-
 conf_mon = "True"
+
+
+
 
 
    
