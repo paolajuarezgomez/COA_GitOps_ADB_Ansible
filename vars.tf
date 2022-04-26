@@ -257,12 +257,6 @@ variable "create_bucket" {
   description = "create Bucket for manual Backups"
 }
 
-variable "conf_manual_backup" {
-  type        = string
-  default     = "True"
-  description = "condition to conf manua backup"
-}
-
 variable "cpu_core_count" {
   type        = string
   default     = "1"
@@ -283,6 +277,16 @@ variable "password" {
   sensitive   = true
 }
 
+#############################
+# ADB Operations
+#############################
+
+variable "conf_manual_backup" {
+  type        = string
+  default     = "True"
+  description = "condition to conf manua backup"
+}
+
 variable "run_manual_backup" {
   default = "false"
 }
@@ -291,3 +295,68 @@ variable "conf_mon" {
   default = "false"
 }
 
+
+#######################
+##### Event Rule   ####
+#######################
+
+variable "rule_actions_actions_action_type" {
+  default = "OSS"
+}
+
+variable "rule_actions_actions_is_enabled" {
+  default = true
+}
+
+variable "rule_actions_actions_description" {
+  default = "Rule to send notification"
+}
+
+variable "rule_condition" {
+default = "{\"eventType\": [\"com.oraclecloud.databaseservice.autonomous.database.backup.begin\", \"com.oraclecloud.databaseservice.automaticbackupautonomousdatabase.end\",\"com.oraclecloud.databaseservice.autonomous.database.instance.create.begin\",\"com.oraclecloud.databaseservice.autonomous.database.instance.create.end\",\"com.oraclecloud.databaseservice.disableautonomousdataguard.begin\",\"com.oraclecloud.databaseservice.disableautonomousdataguard.end\",\"com.oraclecloud.databaseservice.enableautonomousdataguard.begin\",\"com.oraclecloud.databaseservice.enableautonomousdataguard.end\",\"com.oraclecloud.databaseservice.startautonomousdatabase.begin\",\"com.oraclecloud.databaseservice.startautonomousdatabase.end\",\"com.oraclecloud.databaseservice.stopautonomousdatabase.begin\",\"com.oraclecloud.databaseservice.stopautonomousdatabase.end\",\"com.oraclecloud.databaseservice.deleteautonomousdatabase.begin\",\"com.oraclecloud.databaseservice.deleteautonomousdatabase.end\",\"com.oraclecloud.databaseservice.updateautonomousdatabase.begin\",\"com.oraclecloud.databaseservice.updateautonomousdatabase.end\",\"com.oraclecloud.databaseservice.autonomous.database.critical\",\"com.oraclecloud.databaseservice.autonomous.database.information\"]}"
+}
+
+variable "rule_display_name" {
+  default = "ADB"
+}
+
+variable "rule_is_enabled" {
+  default = true
+}
+
+variable "rule_description" {
+  default = "Rule to send notification"
+}
+
+
+variable "notification_topic_name" {
+  default = "Database_monitoring"
+}
+
+
+variable "notification_topic_description" {
+  default = "Topic for Database monitoring"
+}
+
+variable "slack_endpoint" {
+  default = "https://hooks.slack.com/services/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"
+}
+
+variable "stream_endpoint" {
+  default = "ocid1.stream.oc1.eu-amsterdam-1.amaaaaaattkvkkiav6662snwvodlnc2rfmncphhaivliv4rjluwecixfpddq"
+  #default = "https://cell-1.streaming.eu-amsterdam-1.oci.oraclecloud.com"
+}
+
+variable "protocol" {
+  default = "SLACK"
+}
+
+
+
+#######################
+#####  Alarms     ####
+#######################
+
+variable "alarm_enabled" {
+  default = "true"
+}
