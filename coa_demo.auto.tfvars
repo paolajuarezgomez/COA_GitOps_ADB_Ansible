@@ -77,10 +77,12 @@ ssh_public_key_path = "./certs/id_rsa.pub"
 # Compute instances ssh private key
 ssh_private_key_path = "./certs/id_rsa"
 
-# The name of the shape to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the spaecific shape name in the target region.
+# The name of the shape to be used for all the provisioned compute instances. 
+#The automation will automatically figure out the OCID for the spaecific shape name in the target region.
 shape = "VM.Standard1.1"
 
-# The name of the image to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the specific image name in the target region.
+# The name of the image to be used for all the provisioned compute instances. 
+#The automation will automatically figure out the OCID for the specific image name in the target region.
 #image_name = "Oracle-Linux-8.5-2022.04.04-0"
 image_name = "Oracle-Linux-7.9-2022.04.04-0"
 
@@ -107,20 +109,23 @@ data_storage_size_in_tbs   = "1"
 # ADB Operations
 #############################
 
-auto_scaling = "True"
+#Enable (True) or disable (False) feature auto-scaling
+auto_scaling               = "True"
 
 #The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
-adb_state = "AVAILABLE"
+adb_state                  = "AVAILABLE"
 
 #Requiered for Manual backup configuration
+username                   =  "oracleidentitycloudservice/paola.juarez@oracle.com"
+#password                  >>>  Stored in a github secret as password
 #https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-manual.html#GUID-DD2F1114-72F4-4FA9-8524-49A5931057B8
-create_bucket      = "False"
-conf_manual_backup = "False"
-run_manual_backup = "False"
-username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
-#password  >>>  Stored in a github secret as password
+create_bucket              = "False"
+conf_manual_backup         = "False"
 
-#To configure events and alarms of CPU
+#To run a manual backup
+run_manual_backup = "False"
+
+#To configure events and alarms of CPU and sessions
 conf_mon = "True"
 
 
