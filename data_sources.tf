@@ -117,3 +117,15 @@ data "oci_objectstorage_objects" "test_objects" {
   namespace = data.oci_objectstorage_namespace.user_namespace.namespace
 }
 
+#######################
+##monitoring
+#######################
+
+data "oci_ons_notification_topics" "test_notification_topics" {
+    #Required
+    compartment_id = var.default_compartment_id
+
+    #Optional
+    name = var.notification_topic_name
+  
+}
