@@ -18,7 +18,6 @@ output "Databases_topic" {
 #################
 
 resource "oci_ons_notification_topic" "CreateNotificationTopic" {
-  count = var.conf_mon == "True" ? 1 : 0
   #Required
   compartment_id = var.default_compartment_id
   name           = var.notification_topic_name
