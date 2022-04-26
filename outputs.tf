@@ -120,7 +120,7 @@ locals {
 #########################
 
 output "Databases_topic" {
-  value = data.oci_ons_notification_topics.test_notification_topics.topic_id
+  value = data.oci_ons_notification_topics.test_notification_topics[0].topic_id
 }
 
 output "COA_Demo_Details" {
