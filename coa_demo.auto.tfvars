@@ -117,7 +117,7 @@ username           =  "oracleidentitycloudservice/paola.juarez@oracle.com"
 #password  >>>  Stored in a github secret as password
 
 
-conf_mon = "False"
+conf_mon = "True"
 
 
    
