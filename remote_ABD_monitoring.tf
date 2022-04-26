@@ -44,7 +44,9 @@ topic_id = data.oci_ons_notification_topics.test_notification_topics.notificatio
 
 resource "oci_events_rule" "oci_events_monitoring" {
 count = var.conf_mon == "True" ? 1 : 0
-
+#Required
+actions {
+#Required
 actions {
 #Required
 action_type = "ONS"
@@ -53,7 +55,7 @@ is_enabled = var.rule_actions_actions_is_enabled
 description = var.rule_actions_actions_description
 topic_id = data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id
 }
-
+}
 compartment_id = var.default_compartment_id
 condition = var.rule_condition
 display_name = var.rule_display_name
