@@ -258,13 +258,11 @@ variable "create_bucket" {
 }
 
 variable "cpu_core_count" {
-  type        = string
   default     = "1"
   description = "cpu database"
 }
 
 variable "data_storage_size_in_tbs" {
-  type        = string
   default     = "1"
   description = "database size in tbs"
 }
