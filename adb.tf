@@ -35,7 +35,7 @@ module "adb" {
     license_model                    = "BRING_YOUR_OWN_LICENSE"
     nsg_ids                          = null
     refreshable_mode                 = null
-    operations_insights_status       = "NOT_ENABLED"
+    operations_insights_status       = var.insights_status
     private_endpoint_label           = var.adb_db_name
     rotate_key_trigger               = null
     scheduled_operations             = []

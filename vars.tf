@@ -313,6 +313,13 @@ variable "adb_state" {
   default = "AVAILABLE"
 }
 
+variable "insights_status" {
+  type        = string
+  #operations_insights_status - (Optional) (Updatable) Status of Operations Insights for this Autonomous Database.
+  # Values supported are ENABLED and NOT_ENABLED
+  default = "NOT_ENABLED"
+}
+
 
 #######################
 ##### Event Rule   ####
