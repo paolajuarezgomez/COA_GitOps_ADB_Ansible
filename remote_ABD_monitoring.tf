@@ -18,7 +18,7 @@ output "Databases_topic" {
 #################
 
 resource "oci_ons_notification_topic" "CreateNotificationTopic" {
-  count = var.conf_mon == "True"
+  count = var.conf_mon == "True" ? 1 : 0
   #Required
   compartment_id = var.default_compartment_id
   name           = var.notification_topic_name
@@ -32,7 +32,7 @@ resource "oci_ons_notification_topic" "CreateNotificationTopic" {
 ##############################
 
 resource "oci_ons_subscription" "test_subscription" {
-    count = var.conf_mon == "True"
+    count = var.conf_mon == "True" ? 1 : 0
     #Required
     compartment_id = var.default_compartment_id
     endpoint = var.slack_endpoint
@@ -47,7 +47,7 @@ resource "oci_ons_subscription" "test_subscription" {
 
 
 resource "oci_events_rule" "oci_events_monitoring" {
-  count = var.conf_mon == "True"
+  count = var.conf_mon == "True" ? 1 : 0
   #Required
   actions {
     #Required
@@ -86,7 +86,7 @@ resource "oci_events_rule" "oci_events_monitoring" {
 #################
 
 resource "oci_monitoring_alarm" "oci_atp_cpu_critical" {
-    count = var.conf_mon == "True"
+    count = var.conf_mon == "True" ? 1 : 0
     #Required
     compartment_id = var.default_compartment_id
     destinations = [data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id]
@@ -100,7 +100,7 @@ resource "oci_monitoring_alarm" "oci_atp_cpu_critical" {
 }
 
 resource "oci_monitoring_alarm" "oci_atp_session_warning" {
-    count = var.conf_mon == "True"
+    count = var.conf_mon == "True" ? 1 : 0
     #Required
     compartment_id = var.default_compartment_id
     destinations = [data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id]
