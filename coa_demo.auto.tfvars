@@ -113,7 +113,7 @@ data_storage_size_in_tbs   = "1"
 auto_scaling               = "True"
 
 #The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
-adb_state                  = "STOPPED"
+adb_state                  = "AVAILABLE"
 
 #Requiered for Manual backup configuration
 username                   =  "oracleidentitycloudservice/paola.juarez@oracle.com"
