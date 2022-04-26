@@ -8,11 +8,6 @@ data "oci_ons_notification_topics" "test_notification_topics" {
   
 }
 
-output "Databases_topic" {
-  value = data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id
-}
-
-
 #################
 ##   TOPIC   ####
 #################

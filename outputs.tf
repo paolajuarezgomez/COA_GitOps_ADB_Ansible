@@ -119,6 +119,10 @@ locals {
 ## COA DEMO Details
 #########################
 
+output "Databases_topic" {
+  value = data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id
+}
+
 output "COA_Demo_Details" {
   value = {
     automation_run_by  = data.oci_identity_user.coa_demo_executer.name,
