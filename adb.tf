@@ -20,7 +20,7 @@ module "adb" {
     cpu_core_count                   = var.cpu_core_count
     customer_contacts                = []
     data_storage_size_in_gb          = null
-    data_storage_size_in_tbs         = "1"
+    data_storage_size_in_tbs         = var.data_storage_size_in_tbs
     data_safe_status                 = "NOT_REGISTERED"
     db_version                       = var.adb_db_version
     db_workload                      = var.adb_workload
