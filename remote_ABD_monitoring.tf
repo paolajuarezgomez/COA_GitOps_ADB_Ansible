@@ -1,7 +1,7 @@
 
 data "oci_ons_notification_topics" "test_notification_topics" {
     #Required
-    compartment_id = var.compartment_id
+    compartment_id = var.default_compartment_id
 
     #Optional
     name = var.notification_topic_name
@@ -20,7 +20,7 @@ output "Databases_topic" {
 resource "oci_ons_notification_topic" "CreateNotificationTopic" {
   count = var.conf_mon == "True"
   #Required
-  compartment_id = var.compartment_id
+  compartment_id = var.default_compartment_id
   name           = var.notification_topic_name
   #Optional
   description = var.notification_topic_description
@@ -34,7 +34,7 @@ resource "oci_ons_notification_topic" "CreateNotificationTopic" {
 resource "oci_ons_subscription" "test_subscription" {
     count = var.conf_mon == "True"
     #Required
-    compartment_id = var.compartment_id
+    compartment_id = var.default_compartment_id
     endpoint = var.slack_endpoint
     protocol = var.protocol
     topic_id = data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id
@@ -73,7 +73,7 @@ resource "oci_events_rule" "oci_events_monitoring" {
   }
 
   }
-  compartment_id = var.compartment_id
+  compartment_id = var.default_compartment_id
   condition      = var.rule_condition
   display_name   = var.rule_display_name
   is_enabled     = var.rule_is_enabled
@@ -88,11 +88,11 @@ resource "oci_events_rule" "oci_events_monitoring" {
 resource "oci_monitoring_alarm" "oci_atp_cpu_critical" {
     count = var.conf_mon == "True"
     #Required
-    compartment_id = var.compartment_id
+    compartment_id = var.default_compartment_id
     destinations = [data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id]
     display_name = "oci_atp_cpu_critical"
     is_enabled = var.alarm_enabled
-    metric_compartment_id = var.compartment_id
+    metric_compartment_id = var.default_compartment_id
     namespace = "oci_autonomous_database"
     query = "CpuUtilization[5m]{deploymentType = \"Shared\"}.max() > 80"
     severity = "CRITICAL"
@@ -102,11 +102,11 @@ resource "oci_monitoring_alarm" "oci_atp_cpu_critical" {
 resource "oci_monitoring_alarm" "oci_atp_session_warning" {
     count = var.conf_mon == "True"
     #Required
-    compartment_id = var.compartment_id
+    compartment_id = var.default_compartment_id
     destinations = [data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id]
     display_name = "oci_atp_session_warning"
     is_enabled = var.alarm_enabled
-    metric_compartment_id = var.compartment_id
+    metric_compartment_id = var.default_compartment_id
     namespace = "oci_autonomous_database"
     query = "Sessions[5m].rate() > 50"
     severity = "WARNING"
