@@ -1,16 +1,16 @@
 
-data "oci_ons_notification_topics" "test_notification_topics" {
+#data "oci_ons_notification_topics" "test_notification_topics" {
     #Required
-    compartment_id = var.default_compartment_id
+#    compartment_id = var.default_compartment_id
 
     #Optional
-    name = var.notification_topic_name
+ #   name = var.notification_topic_name
   
-}
+#}
 
-output "Databases_topic" {
-  value = data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id
-}
+#output "Databases_topic" {
+#  value = data.oci_ons_notification_topics.test_notification_topics.notification_topics[0].topic_id
+#}
 
 
 #################
