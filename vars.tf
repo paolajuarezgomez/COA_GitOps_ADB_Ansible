@@ -301,6 +301,9 @@ variable "conf_mon" {
   default = "false"
 }
 
+variable "auto_scaling" {
+  default = "true"
+}
 
 #######################
 ##### Event Rule   ####
