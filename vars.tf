@@ -339,7 +339,7 @@ variable "notification_topic_description" {
 }
 
 variable "slack_endpoint" {
-  default = "https://hooks.slack.com/services/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"
+  default = "https://hooks.slack.com/services/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"
 }
 
 variable "stream_endpoint" {
