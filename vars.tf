@@ -286,3 +286,8 @@ variable "password" {
 variable "run_manual_backup" {
   default = "false"
 }
+
+variable "conf_mon" {
+  default = "false"
+}
+
