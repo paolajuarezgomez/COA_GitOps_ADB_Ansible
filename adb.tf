@@ -20,7 +20,7 @@ module "adb" {
     cpu_core_count                   = var.cpu_core_count
     customer_contacts                = []
     data_storage_size_in_gb          = null
-    data_storage_size_in_tbs         = "1"
+    data_storage_size_in_tbs         = var.data_storage_size_in_tbs
     data_safe_status                 = "NOT_REGISTERED"
     db_version                       = var.adb_db_version
     db_workload                      = var.adb_workload
@@ -44,7 +44,6 @@ module "adb" {
     subnet_id                        = oci_core_subnet.coa_atp_private_subnet.id
     nsg_ids                          = tolist([oci_core_network_security_group.ATPSecurityGroup.id])
     whitelisted_ips                  = []
-
     autonomous_container_database_id               = null
     autonomous_database_backup_id                  = null
     autonomous_database_id                         = null
