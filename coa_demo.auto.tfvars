@@ -109,8 +109,8 @@ data_storage_size_in_tbs   = "1"
 # ADB Operations
 #############################
 
-#Enable (True) or disable (False) feature auto-scaling
-auto_scaling               = "True"
+#Enable (true) or disable (false) feature auto-scaling
+auto_scaling               = "true"
 
 #The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
 adb_state                  = "STOPPED"

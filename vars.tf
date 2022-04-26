@@ -303,7 +303,7 @@ variable "conf_mon" {
 
 variable "auto_scaling" {
   type        = string
-  default = "True"
+  default = "true"
 }
 
 
