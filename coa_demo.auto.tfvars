@@ -94,7 +94,7 @@ install_product = "Flask"
 #############################
 # OCI COA ADB
 #############################
-deploy_adb                 = "False"
+deploy_adb                 = "True"
 #adb_password              >>>  Stored in a github secret as adb_password
 adb_workload               = "OLTP"
 adb_db_name                = "ADBCOADEMO1"
@@ -123,5 +123,5 @@ conf_manual_backup         = "True"
 #To run a manual backup
 run_manual_backup          = "False"
 #To configure events and alarms of CPU and sessions
-conf_mon                   = "False"
+conf_mon                   = "True"
 
