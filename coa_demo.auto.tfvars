@@ -123,7 +123,7 @@ create_bucket              = "True"
 #Pre configure database to be able to do manual backups
 conf_manual_backup         = "True"
 #To run a manual backup
-run_manual_backup          = "False"
+run_manual_backup          = "True"
 
 
 
