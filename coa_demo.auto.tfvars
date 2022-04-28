@@ -98,8 +98,8 @@ install_product = "Flask"
 deploy_adb                 = "False"
 #adb_password              >>>  Stored in a github secret as adb_password
 adb_workload               = "OLTP"
-adb_db_name                = "ADBCOADEMO"
-adb_display_name           = "ADBCOADEMO"
+adb_db_name                = "ADBCOADEMO1"
+adb_display_name           = "ADBCOADEMO1"
 adb_db_version             = "19c"
 cpu_core_count             = "1"
 data_storage_size_in_tbs   = "1"
@@ -126,7 +126,7 @@ conf_manual_backup         = "False"
 run_manual_backup = "False"
 
 #To configure events and alarms of CPU and sessions
-conf_mon = "True"
+conf_mon = "False"
 
 #Enable/Disable Operations Insights for this Autonomous Database. Values supported are ENABLED and NOT_ENABLED
 insights_status = "NOT_ENABLED"
