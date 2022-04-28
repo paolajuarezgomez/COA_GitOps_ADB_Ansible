@@ -94,7 +94,6 @@ install_product = "Flask"
 #############################
 # OCI COA ADB
 #############################
-
 deploy_adb                 = "False"
 #adb_password              >>>  Stored in a github secret as adb_password
 adb_workload               = "OLTP"
@@ -108,26 +107,21 @@ data_storage_size_in_tbs   = "1"
 #############################
 # ADB Operations
 #############################
-
 #Enable (true) or disable (false) feature auto-scaling
 auto_scaling               = "true"
-
 #The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
 adb_state                  = "AVAILABLE"
-
+#Enable/Disable Operations Insights for this Autonomous Database. Values supported are ENABLED and NOT_ENABLED
+insights_status = "NOT_ENABLED"
 #Requiered for Manual backup configuration
 username                   =  "oracleidentitycloudservice/paola.juarez@oracle.com"
 #password                  >>>  Stored in a github secret as password
 #https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-manual.html#GUID-DD2F1114-72F4-4FA9-8524-49A5931057B8
 create_bucket              = "False"
+#Pre configure database to be able to do manual backups
 conf_manual_backup         = "False"
-
 #To run a manual backup
 run_manual_backup = "False"
-
 #To configure events and alarms of CPU and sessions
 conf_mon = "False"
-
-#Enable/Disable Operations Insights for this Autonomous Database. Values supported are ENABLED and NOT_ENABLED
-insights_status = "NOT_ENABLED"
 
