@@ -110,7 +110,7 @@ data_storage_size_in_tbs   = "1"
 #Enable (true) or disable (false) feature auto-scaling
 auto_scaling               = "true"
 #The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
-adb_state                  = "AVAILABLE"
+adb_state                  = "STOPPED"
 #Enable/Disable Operations Insights for this Autonomous Database. Values supported are ENABLED and NOT_ENABLED
 insights_status = "NOT_ENABLED"
 #Requiered for Manual backup configuration
