@@ -123,5 +123,5 @@ conf_manual_backup         = "True"
 #To run a manual backup
 run_manual_backup = "False"
 #To configure events and alarms of CPU and sessions
-conf_mon = "False"
+conf_mon = "True"
 
