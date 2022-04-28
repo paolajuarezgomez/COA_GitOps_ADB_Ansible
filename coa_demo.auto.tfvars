@@ -107,6 +107,8 @@ data_storage_size_in_tbs   = "1"
 #############################
 # ADB Operations
 #############################
+#To configure events and alarms of CPU and sessions
+conf_mon                   = "False"
 #Enable (true) or disable (false) feature auto-scaling
 auto_scaling               = "true"
 #The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
@@ -122,6 +124,5 @@ create_bucket              = "True"
 conf_manual_backup         = "True"
 #To run a manual backup
 run_manual_backup          = "False"
-#To configure events and alarms of CPU and sessions
-conf_mon                   = "False"
+
 
