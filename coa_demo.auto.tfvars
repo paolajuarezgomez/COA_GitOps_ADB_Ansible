@@ -109,7 +109,7 @@ data_storage_size_in_tbs   = "1"
 #############################
 
 #Requiered for Manual backup configuration
-username                   =  "oracleidentitycloudservice/paola.juarez@oracle.com"
+username                   =  "oracleidentitycloudservice/paola.juarez@oracle.co"
 #password                  >>>  Stored in a github secret as password
 #https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-manual.html#GUID-DD2F1114-72F4-4FA9-8524-49A5931057B8
 create_bucket              = "False"
