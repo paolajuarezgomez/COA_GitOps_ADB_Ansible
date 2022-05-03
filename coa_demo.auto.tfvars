@@ -108,7 +108,7 @@ data_storage_size_in_tbs   = "1"
 # ADB Operations
 #############################
 #To configure events and alarms of CPU and sessions
-conf_mon                   = "False"
+conf_mon                   = "True"
 #Requiered for Manual backup configuration
 username                   =  "oracleidentitycloudservice/paola.juarez@oracle.com"
 #password                  >>>  Stored in a github secret as password
@@ -117,7 +117,7 @@ create_bucket              = "False"
 #Pre configure database to be able to do manual backups
 conf_manual_backup         = "False"
 #To run a manual backup
-run_manual_backup          = "True"
+run_manual_backup          = "False"
 #Enable (true) or disable (false) feature auto-scaling
 auto_scaling               = "true"
 #The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
