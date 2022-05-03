@@ -100,7 +100,7 @@ adb_workload               = "OLTP"
 adb_db_name                = "ADBCOADEMO1"
 adb_display_name           = "ADBCOADEMO1"
 adb_db_version             = "19c"
-cpu_core_count             = "1"
+cpu_core_count             = "2"
 data_storage_size_in_tbs   = "1"
 
 
