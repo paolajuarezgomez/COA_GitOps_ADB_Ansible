@@ -124,7 +124,7 @@ adb_state                  = "AVAILABLE"
 #Enable/Disable Operations Insights for this Autonomous Database. Values supported are ENABLED and NOT_ENABLED
 insights_status            = "NOT_ENABLED"
 #To configure events and alarms of CPU and sessions
-conf_mon                   = "True"
+conf_mon                   = "False"
 
 
 
