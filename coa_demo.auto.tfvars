@@ -108,7 +108,7 @@ data_storage_size_in_tbs   = "1"
 # ADB Operations
 #############################
 #To configure events and alarms of CPU and sessions
-conf_mon                   = "False"
+conf_mon                   = "True"
 #Requiered for Manual backup configuration
 username                   =  "oracleidentitycloudservice/paola.juarez@oracle.com"
 #password                  >>>  Stored in a github secret as password
