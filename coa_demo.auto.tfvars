@@ -116,7 +116,7 @@ create_bucket              = "True"
 #Pre configure database to be able to do manual backups
 conf_manual_backup         = "True"
 #To run a manual backup
-run_manual_backup          = "False"
+run_manual_backup          = "True"
 #Enable (true) or disable (false) feature auto-scaling
 auto_scaling               = "true"
 #The current state of the Autonomous Database. Could be set to AVAILABLE or STOPPED
