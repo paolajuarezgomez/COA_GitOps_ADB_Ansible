@@ -15,9 +15,10 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v2
     - name: Lint Ansible Playbook
-      uses: ansible/ansible-lint-action@master
+      uses: ansible/ansible-lint-action@main
       with:
         targets: ""
+        
   deployAnsible:
     needs: build
     runs-on: ubuntu-latest
