@@ -1,0 +1,8 @@
+- name: Install Oracle client and python
+  become: yes
+  become_method: sudo
+  become_user: root
+  yum: 
+    name: https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.10-basic-19.10.0.0.0-1.x86_64.rpm
+    state: present
+  register: client
