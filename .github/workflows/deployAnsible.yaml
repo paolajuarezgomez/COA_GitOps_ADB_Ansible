@@ -22,7 +22,7 @@ jobs:
     
     - name: Play Ansible Playbook
       uses: arillso/action.playbook@master
-        with:
+      with:
         playbook: tests/playbook.yml
         inventory: tests/hosts.yml
         galaxy_file: tests/requirements.yml
