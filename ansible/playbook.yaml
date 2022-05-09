@@ -1,0 +1,7 @@
+- hosts: bastion
+
+  tasks:     
+   - name: include  variables
+     include_vars: ./confgBackup/var.yaml
+     
+   - import_tasks: ./tasks/ConfBackup.yaml
