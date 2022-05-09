@@ -10,17 +10,6 @@ on:
 
 jobs:
 
-  test_docker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-
-      - name: Build Docker image
-        run: docker build --pull -t test .
-
-      - name: Test Docker image
-        run: docker image inspect test
-
   test_action:
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +19,7 @@ jobs:
         uses: ./
         with:
           playbook: ansible/playbook.yaml
-          inventory: ansbile/hosts
+          inventory: ansible/hosts
         env:
           ANSIBLE_HOST_KEY_CHECKING: "false"
           ANSIBLE_DEPRECATION_WARNINGS: "false"
