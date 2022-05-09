@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: ./.github/actions/ansible
+    - uses: ./actions/ansible
       with: 
-        playbook: playbook.yml
-        inventory: localhost
+        playbook: playbook.yaml
+        inventory: hosts
