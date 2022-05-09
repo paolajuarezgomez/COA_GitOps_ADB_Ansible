@@ -35,3 +35,4 @@ jobs:
       uses: ansible-community/ansible-lint-action@main
       with:
        path: "./ansible/playbook.yaml"
+       targets: ./ansible/hosts
