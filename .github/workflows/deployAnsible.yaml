@@ -9,9 +9,6 @@ on:
     - main
 
 jobs:
-  build:
-
-jobs:
   test_go:
     runs-on: ubuntu-latest
     steps:
