@@ -23,7 +23,7 @@ jobs:
       uses: dawidd6/action-ansible-playbook@v2
       with:
         # Required, playbook filepath
-        playbook: deploy.yml
+        playbook: playbook.yml
         # Optional, directory where playbooks live
         directory: ./
         # Optional, SSH private key
