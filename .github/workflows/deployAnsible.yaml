@@ -19,27 +19,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Run playbook
-      uses: dawidd6/action-ansible-playbook@v2
-      with:
-        # Required, playbook filepath
-        playbook: playbook.yml
-        # Optional, directory where playbooks live
-        directory: ansible
-        # Optional, SSH private key
-        key: ${{secrets.SSH_PRIVATE_KEY}}
-        # Optional, literal inventory file contents
-        inventory: |
-          [bastion]
-          132.145.55.179	 ansible_python_interpreter=auto_silent ansible_user=opc
-
-        # Optional, SSH known hosts file content
-        known_hosts: .known_hosts
-        # Optional, encrypted vault password
-        vault_password: ${{secrets.VAULT_PASSWORD}}
-        # Optional, additional flags to pass to ansible-playbook
-        options: |
-          --inventory .hosts
-          --limit group1
-          --extra-vars hello=there
-          --verbose
+    
+    - name: Play Ansible Playbook
+      uses: arillso/action.playbook@master
+        with:
+        playbook: tests/playbook.yml
+        inventory: tests/hosts.yml
+        galaxy_file: tests/requirements.yml
+      env:
+       ANSIBLE_HOST_KEY_CHECKING: 'false'
+       ANSIBLE_DEPRECATION_WARNINGS: 'false'
