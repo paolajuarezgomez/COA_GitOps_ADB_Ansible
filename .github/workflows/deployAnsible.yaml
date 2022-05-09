@@ -10,17 +10,22 @@ on:
 
 jobs:
 
-  test_action:
+
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+    - name: checkout repo
+      uses: actions/checkout@v2
+    - name: Lint Ansible Playbook
+      uses: ansible/ansible-lint-action@master
 
-      - name: Run Ansible playbook
-        uses: dawidd6/action-ansible-playbook@v2.5.0
-        with:
-          playbook: ansible/playbook.yaml # path to your Ansible playbook
-          directory: ./
-          key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          inventory: |
-           [bastion]
-            132.145.55.179
+  
+  deployAnsible:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./.github/actions/ansible
+      with: 
+        playbook: playbook.yml
+        inventory: localhost
