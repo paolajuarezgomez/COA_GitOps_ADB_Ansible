@@ -15,11 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Testing action
-        uses: ./
+      - name: Run Ansible playbook
+        uses: dawidd6/action-ansible-playbook@v2.5.0
         with:
-          playbook: ansible/playbook.yaml
-          inventory: ansible/hosts
-        env:
-          ANSIBLE_HOST_KEY_CHECKING: "false"
-          ANSIBLE_DEPRECATION_WARNINGS: "false"
+          playbook: ansible/playbook.yaml # path to your Ansible playbook
+          directory: ./
+          key: ${{ secrets.ansible_ssh_private_key }} 
