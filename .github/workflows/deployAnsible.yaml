@@ -20,4 +20,4 @@ jobs:
         with:
           playbook: ansible/playbook.yaml # path to your Ansible playbook
           directory: ./
-          key: ${{ secrets.ansible_ssh_private_key }} 
+          key: ${{ secrets.SSH_PRIVATE_KEY }} 
