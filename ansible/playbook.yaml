@@ -2,6 +2,6 @@
 
   tasks:     
    - name: include  variables
-     include_vars: ./confgBackup/var.yaml
+     include_vars: ./variables/var_backup.yaml
      
    - import_tasks: ./tasks/ConfBackup.yaml
