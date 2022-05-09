@@ -21,3 +21,6 @@ jobs:
           playbook: ansible/playbook.yaml # path to your Ansible playbook
           directory: ./
           key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          inventory: |
+           [bastion]
+            132.145.55.179
