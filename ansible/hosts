@@ -1,0 +1,2 @@
+[bastion]
+132.145.55.179	 ansible_python_interpreter=auto_silent ansible_user=opc
