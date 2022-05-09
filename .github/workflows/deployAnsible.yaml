@@ -23,8 +23,8 @@ jobs:
     - name: Play Ansible Playbook
       uses: arillso/action.playbook@master
       with:
-        playbook: ansible/playbook.yml
-        inventory: ansbile/hosts.yml
+        playbook: ansible/playbook.yaml
+        inventory: ansbile/hosts.yaml
         #galaxy_file: tests/requirements.yml
       env:
        ANSIBLE_HOST_KEY_CHECKING: 'false'
