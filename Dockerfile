@@ -1,8 +1,5 @@
-FROM pinkrobin/docker-ansible-alpine:2.9.11
+FROM  <DockerHub-UserName>/ansible-in-containers
 
-MAINTAINER Patrick Pötz <devops@wastebox.biz>
+COPY ./entrypoint.sh /entrypoint.sh
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["bash","/entrypoint.sh"]
