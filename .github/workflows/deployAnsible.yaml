@@ -37,6 +37,21 @@ jobs:
        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
    
 
-    - name: run playbook
-      run: |
-         ansible-playbook ./ansible/playbook.yaml -i ./ansible/hosts
+    #- name: run playbook
+    #  run: |
+    #     ansible-playbook ./ansible/playbook.yaml -i ./ansible/hosts
+
+
+    - name: Run playbook
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
+        # Required, playbook filepath
+        playbook: playbook.yaml
+        # Optional, directory where playbooks live
+        directory: ansible
+        # Optional, SSH private key
+        key: ${{secrets.SSH_PRIVATE_KEY}}
+        # Optional, literal inventory file contents
+        inventory: |
+          [bastion]
+          132.145.55.179	 ansible_python_interpreter=auto_silent ansible_user=opc
