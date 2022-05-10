@@ -1,5 +1,5 @@
 - name: copy config file
-  become: true
+  become: yes
   become_method: sudo
   become_user: root
   ansible.builtin.copy:
@@ -11,7 +11,7 @@
   ansible.builtin.debug:
     var: client1
 - name: copy api key file
-  become: true
+  become: yes
   become_method: sudo
   become_user: root
   ansible.builtin.copy:
@@ -23,7 +23,7 @@
   ansible.builtin.debug:
     var: client2
 - name: run backup
-  become: true
+  become: yes
   become_method: sudo
   become_user: root
   ansible.builtin.shell: oci db autonomous-database-backup create --display-name {{ display_name }} --autonomous-database-id {{ database_id }}
@@ -32,7 +32,7 @@
   ansible.builtin.debug:
     var: client3
 - name: Ansible delete config file
-  become: true
+  become: yes
   become_method: sudo
   become_user: root
   file:
@@ -43,7 +43,7 @@
   ansible.builtin.debug:
     var: client4
 - name: Ansible delete api file
-  become: true
+  become: yes
   become_method: sudo
   become_user: root
   file:
@@ -53,6 +53,3 @@
 - name: Print delete api file
   ansible.builtin.debug:
     var: client5
-
-
-
