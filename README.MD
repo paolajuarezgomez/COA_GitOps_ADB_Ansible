@@ -13,6 +13,8 @@ During this UseCase we're going to:
 * Create a test workflow using Lint ansible.
 * Run gitops operations in an ATP workload using ansible playbooks.
 
+![tabactions](images/Diagram.png)
+
 ## ✅ Usage
 
 * Clone this repo in GitHub and create you own repository.
