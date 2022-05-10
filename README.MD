@@ -12,6 +12,7 @@ During this UseCase we're going to:
 * Use Github Actions to build different pipelines/workflows.
 * Create a test workflow using Lint ansible.
 * Run gitops operations in an ATP workload using ansible playbooks.
+* We´ll use the bastion as a Ansible [control node](https://docs.ansible.com/ansible/2.5/network/getting_started/basic_concepts.html#control-node)
 
 ![tabactions](images/Diagram.png)
 
