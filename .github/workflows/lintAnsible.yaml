@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+  LintAnsible:
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo
