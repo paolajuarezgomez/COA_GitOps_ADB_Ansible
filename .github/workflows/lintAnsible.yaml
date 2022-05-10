@@ -16,8 +16,9 @@ jobs:
 
     - name: Run ansible-lint
       #uses: ansible-community/ansible-lint-action@v6
-      #uses: ansible/ansible-lint-action@master
-      uses: ansible/ansible-lint-action@151b9a2
+      #uses: ansible/ansible-lint-action@main
+      #uses: ansible/ansible-lint-action@151b9a2
+      uses: osism/ansible-lint-action@main
       # optional:
       with:
        targets: "./ansible/playbook.yaml" 
