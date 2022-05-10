@@ -31,7 +31,7 @@ SSH_PRIVATE_KEY
 ````
 
 * Add also the *VAULT_PASSWORD* as another secret varible in github. This is the password used for ansible-vault for encrypt the files that contain secrets
-in this example the password is TestATP2022.
+in this example the password is *****
 
 ````
 VAULT_PASSWORD
