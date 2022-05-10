@@ -18,4 +18,4 @@ jobs:
       uses: ansible-community/ansible-lint-action@v6
       # optional:
       with:
-        path: "./playbook"  
+        targets: "./ansible/playbook.yaml" 
