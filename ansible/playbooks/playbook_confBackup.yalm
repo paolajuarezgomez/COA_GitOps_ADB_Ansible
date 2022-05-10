@@ -1,1 +1,11 @@
-playbook.yaml
+- hosts: bastion
+
+  tasks:     
+  
+   - name: include vault for secrets 
+     include_vars: ./vault/vault_backup.yaml
+     
+   - name: include  variables
+     include_vars: ./variables/var_backup.yaml
+     
+   - import_tasks: ./tasks/config_Backup.yaml
