@@ -26,7 +26,7 @@
   become: true
   become_method: sudo
   become_user: root
-  ansible.builtin.shell: oci db autonomous-database-backup create --display-name {{display_name}} --autonomous-database-id {{database_id}}
+  ansible.builtin.shell: oci db autonomous-database-backup create --display-name {{ display_name }} --autonomous-database-id {{ database_id }}
   register: client3
 - name: Print copy config_Backup.sql
   ansible.builtin.debug:
