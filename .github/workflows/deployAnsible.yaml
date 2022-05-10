@@ -1,9 +1,9 @@
 name: deploy ansible playbook
 
-on:
+on: 
   pull_request:
-    branches:
-    - main
+    types:
+      - closed
 
 jobs:
 
