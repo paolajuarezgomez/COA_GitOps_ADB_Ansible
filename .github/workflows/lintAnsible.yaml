@@ -35,6 +35,7 @@ jobs:
         # [optional]
         # Arguments to be passed to the ansible-lint
 
+
         # Options:
         #   -q                    quieter, although not silent output
         #   -p                    parseable output in the format of pep8
