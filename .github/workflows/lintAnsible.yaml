@@ -7,7 +7,6 @@ on:
       - main 
 
 jobs:
-
   LintAnsible:
     runs-on: ubuntu-latest
     steps:
