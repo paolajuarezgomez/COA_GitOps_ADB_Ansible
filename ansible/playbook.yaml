@@ -1,6 +1,10 @@
 - hosts: bastion
 
   tasks:     
+  
+   - name: include vault for secrets 
+     include_vars: ./vaults/vault_backup.yaml
+     
    - name: include  variables
      include_vars: ./variables/var_backup.yaml
      
