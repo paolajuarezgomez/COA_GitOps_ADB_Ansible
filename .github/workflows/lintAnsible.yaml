@@ -1,6 +1,10 @@
 
 name: lint ansible playbook
 
+# Ansible Lint is an open source project that lints your Ansible code. The docs state that it checks playbooks for practices and behavior that could potentially be improved. 
+# It can be installed with pip and run manually on playbooks or set up in a pre-commit hook and run when you attempt a commit on your repo from the CLI.
+# https://www.ansible.com/blog/ansible-linting-with-github-actions
+
 on:
   pull_request:
     branches: 
