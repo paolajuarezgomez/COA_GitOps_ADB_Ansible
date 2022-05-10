@@ -1,15 +1,11 @@
 name: deploy ansible playbook
 
 on:
-  push:
-    branches:
-    - main
   pull_request:
     branches:
     - main
 
 jobs:
-
 
   build:
     runs-on: ubuntu-latest
@@ -17,11 +13,11 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v3
       
-    - name: Setup Python  
-      uses: actions/setup-python@v3
-      with:  
-        python-version: 3.10.0  
-        architecture: x64      
+   # - name: Setup Python  
+   #   uses: actions/setup-python@v3
+   #   with:  
+   #     python-version: 3.10.0  
+   #     architecture: x64      
   
   deployAnsible:
     needs: build
