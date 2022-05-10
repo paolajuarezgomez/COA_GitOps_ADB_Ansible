@@ -181,7 +181,7 @@
   become_method: sudo
   become_user: root
   ansible.builtin.shell: /tmp/connect_atp.sh > atp.log
-  #ignore_errors: true
+  ignore_errors: true
   register: client16
   
 - name: Print return configuration
