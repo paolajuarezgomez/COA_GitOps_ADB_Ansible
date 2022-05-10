@@ -6,3 +6,211 @@
     name: https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.10-basic-19.10.0.0.0-1.x86_64.rpm
     state: present
   register: client
+  
+- name: Print return Install Oracle client and python
+  ansible.builtin.debug:
+    var: client
+
+- name: Install Oracle sqlplus
+  become: yes
+  become_method: sudo
+  become_user: root
+  yum: 
+    name: https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.10-sqlplus-19.10.0.0.0-1.x86_64.rpm
+    state: present
+  register: client1
+  
+- name: Print return Install Oracle sqlplus
+  ansible.builtin.debug:
+    var: client1
+    
+- name: Install Oracle python
+  become: yes
+  become_method: sudo
+  become_user: root
+  yum: 
+    name: python36
+    state: present
+  register: client2
+  
+- name: Print return Install Oracle python
+  ansible.builtin.debug:
+    var: client2
+
+- name: Wallet_ADBCOADEMO.zip /network/admin
+  become: yes
+  become_method: sudo
+  become_user: root
+  ansible.builtin.unarchive:
+    src: ../confgBackup/Wallet_ADBCOADEMO.zip
+    dest: /usr/lib/oracle/19.10/client64/lib/network/admin/
+  register: client5
+    
+- name: Print return wallet
+  ansible.builtin.debug:
+    var: client5
+    
+- name: copy config_Backup.sql
+  become: yes
+  become_method: sudo
+  become_user: root
+  ansible.builtin.copy:
+    src: ../confgBackup/config_Backup.sql
+    dest: /tmp/config_Backup.sql
+    mode: u=rwx
+  register: client7
+    
+- name: Print copy config_Backup.sql
+  ansible.builtin.debug:
+    var: client7  
+    
+- name: Replace bucket
+  become: yes
+  become_method: sudo
+  become_user: root    
+  ansible.builtin.replace:
+    dest: /tmp/config_Backup.sql
+    regexp: 'atp_bucket'
+    replace: '{{ adb_bucket }}'
+  register: client8
+    
+- name: Print return replace bucket
+  ansible.builtin.debug:
+    var: client8
+    
+- name: Replace namespace
+  become: yes
+  become_method: sudo
+  become_user: root    
+  ansible.builtin.replace:
+    dest: /tmp/config_Backup.sql
+    regexp: 'namespace'
+    replace: '{{ adb_namespace }}'
+  register: client9
+    
+- name: Print return replace namespace
+  ansible.builtin.debug:
+    var: client9
+
+- name: Replace region
+  become: yes
+  become_method: sudo
+  become_user: root    
+  ansible.builtin.replace:
+    dest: /tmp/config_Backup.sql
+    regexp: 'region'
+    replace: '{{ adb_region }}'
+  register: client10
+    
+- name: Print return replace region
+  ansible.builtin.debug:
+    var: client10
+    
+- name: Replace cred_username
+  become: yes
+  become_method: sudo
+  become_user: root    
+  ansible.builtin.replace:
+    dest: /tmp/config_Backup.sql
+    regexp: 'cred_username'
+    replace: '{{ adb_username }}'
+  register: client11
+    
+- name: Print return replace cred_username
+  ansible.builtin.debug:
+    var: client11
+    
+- name: Replace cred_password
+  become: yes
+  become_method: sudo
+  become_user: root    
+  ansible.builtin.replace:
+    dest: /tmp/config_Backup.sql
+    regexp: 'cred_password'
+    replace: '{{ adb_cred_password }}'
+  register: client12
+    
+- name: Print return replace cred_password
+  ansible.builtin.debug:
+    var: client12
+
+- name: copy connect_atp.sh
+  become: yes
+  become_method: sudo
+  become_user: root
+  ansible.builtin.copy:
+    src: ../confgBackup/connect_atp.sh
+    dest: /tmp/connect_atp.sh
+    mode: u=rwx
+  register: client13
+    
+- name: Print copy connect_atp.sh
+  ansible.builtin.debug:
+    var: client13 
+    
+- name: Replace alias
+  become: yes
+  become_method: sudo
+  become_user: root    
+  ansible.builtin.replace:
+    dest: /tmp/connect_atp.sh
+    regexp: 'alias'
+    replace: '{{ adb_alias }}'
+  register: client14
+    
+- name: Print return replace alias
+  ansible.builtin.debug:
+    var: client14
+    
+- name: Replace password
+  become: yes
+  become_method: sudo
+  become_user: root    
+  ansible.builtin.replace:
+    dest: /tmp/connect_atp.sh
+    regexp: 'password'
+    replace: '{{ adb_password }}'
+  register: client15
+    
+- name: Print return replace password
+  ansible.builtin.debug:
+    var: client15
+    
+- name: run configuration
+  become: yes
+  become_method: sudo
+  become_user: root
+  ansible.builtin.shell: /tmp/connect_atp.sh > atp.log
+  ignore_errors: true
+  register: client16
+  
+- name: Print return configuration
+  ansible.builtin.debug:
+    var: client16
+
+- name: Ansible delete files
+  become: yes
+  become_method: sudo
+  become_user: root
+  file:
+    path: /tmp/config_Backup.sql
+    state: absent
+  register: client17
+  
+- name: Print rm files
+  ansible.builtin.debug:
+    var: client17
+    
+- name: Ansible delete files
+  become: yes
+  become_method: sudo
+  become_user: root
+  file:
+    path: /tmp/connect_atp.sh
+    state: absent
+  register: client18
+
+- name: Print rm files
+  ansible.builtin.debug:
+    var: client18
+    
