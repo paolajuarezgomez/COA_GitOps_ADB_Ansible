@@ -42,7 +42,7 @@
   become_method: sudo
   become_user: root
   ansible.builtin.unarchive:
-    src: ../confgBackup/Wallet_ADBCOADEMO.zip
+    src: ../files/confgBackup/Wallet_ADBCOADEMO.zip
     dest: /usr/lib/oracle/19.10/client64/lib/network/admin/
   register: client5
     
@@ -55,7 +55,7 @@
   become_method: sudo
   become_user: root
   ansible.builtin.copy:
-    src: ../confgBackup/config_Backup.sql
+    src: ../files/confgBackup/config_Backup.sql
     dest: /tmp/config_Backup.sql
     mode: u=rwx
   register: client7
@@ -139,7 +139,7 @@
   become_method: sudo
   become_user: root
   ansible.builtin.copy:
-    src: ../confgBackup/connect_atp.sh
+    src: ../files/confgBackup/connect_atp.sh
     dest: /tmp/connect_atp.sh
     mode: u=rwx
   register: client13
