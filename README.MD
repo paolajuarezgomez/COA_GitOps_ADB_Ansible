@@ -10,8 +10,8 @@ A workflow is a configurable automated process that will run one or more jobs. W
 During this UseCase we're going to:
 
 * Use Github Actions to build different pipelines/workflows.
-* Create a test pipeline/workflow using Lint ansible.
-* Run gitops operations in an ATP workload using ansible
+* Create a test workflow using Lint ansible.
+* Run gitops operations in an ATP workload using ansible playbooks.
 
 ## ✅ Usage
 
