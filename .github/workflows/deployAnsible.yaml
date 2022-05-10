@@ -39,4 +39,4 @@ jobs:
 
     - name: run playbook
       run: |
-         ansible-playbook ./ansible/playbook.yml -i ./ansible/hosts
+         ansible-playbook ./ansible/playbook.yaml -i ./ansible/hosts
