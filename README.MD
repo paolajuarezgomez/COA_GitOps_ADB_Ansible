@@ -9,17 +9,17 @@ A workflow is a configurable automated process that will run one or more jobs. W
 
 During this UseCase we're going to:
 
-* Use Github Actions to build different pipelines/workflows.
+* Use Github Actions to build different workflows.
 * Create a test workflow using Lint ansible.
 * Run gitops operations in an ATP workload using ansible playbooks.
-* We´ll use the bastion as a Ansible [control node](https://docs.ansible.com/ansible/2.5/network/getting_started/basic_concepts.html#control-node)
+* We´ll use a host bastion as a Ansible [control node](https://docs.ansible.com/ansible/2.5/network/getting_started/basic_concepts.html#control-node)
 
 ![tabactions](images/Diagram.png)
 
 ## ✅ Usage
 
 * Clone this repo in GitHub and create you own repository.
-* The first thing you’ll need to do before your GitHub Actions can run is to add your credentials to the repository. To do this you will need to follow these steps:
+* Add the ssh key needed to connect to the bastion in the github secrets:
 
    * Navigate to your repository and select the Settings tab.
    * Once there you should see on the left a Secrets section third from the bottom of the list, click on that.
@@ -27,16 +27,22 @@ During this UseCase we're going to:
    * Add the next secrets:
 
 ````
-SSH_PRIVATE_KEY
 VAULT_PASSWORD
 ````
-* The *SSH_PRIVATE_KEY* is the ssh key necesary to connecto to the bastion
-* The *VAULT_PASSWORD* is the password used for ansible-vault for encrypt the files that contain secrets
+
+* Add also the *VAULT_PASSWORD* as another secret varible in github. This is the password used for ansible-vault for encrypt the files that contain secrets
+in this example the password is TestATP2022.
+
+````
+VAULT_PASSWORD
+````
 
 * The pipelines/workflows configuration are defined in the directory **.github/workflows**, in this case we have created two different workdlows: **LintAnsible.yaml and **DeployAnsible.yaml**
 * Go to settings of your repo, and active the use of workflows.(*Settings-> Actions-> General-> Allow all actions and reusable workflows*)
 
 * Create a new branch, review the different playbooks examples in /ansible/playbooks , copy the content os the choose operation in ./ansible/playbook.yaml and publish the changes to the new branch. 
+
+* Review if the playbook uses any vault file, if is needed you need to encrypt the content of the file using ansible-vault.  
 
 * Open a "merge pull request" and check how the first  pipeline run:
 ![tabactions](images/Pullreques.png)
