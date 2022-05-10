@@ -3,7 +3,7 @@
   become_method: sudo
   become_user: root
   ansible.builtin.copy:
-    src: ../vaults/config
+    src: ../vault/config
     dest: /root/.oci/config
     mode: u=rw
   register: client1
