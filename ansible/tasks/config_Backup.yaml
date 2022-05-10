@@ -181,34 +181,34 @@
   become_method: sudo
   become_user: root
   ansible.builtin.shell: /tmp/connect_atp.sh > atp.log
-  ignore_errors: true
+  #ignore_errors: true
   register: client16
   
 - name: Print return configuration
   ansible.builtin.debug:
     var: client16
 
-- name: Ansible delete files
-  become: yes
-  become_method: sudo
-  become_user: root
-  file:
-    path: /tmp/config_Backup.sql
-    state: absent
-  register: client17
+#- name: Ansible delete files
+#  become: yes
+#  become_method: sudo
+#  become_user: root
+#  file:
+#    path: /tmp/config_Backup.sql
+#    state: absent
+#  register: client17
   
-- name: Print rm files
-  ansible.builtin.debug:
-    var: client17
+#- name: Print rm files
+#  ansible.builtin.debug:
+#    var: client17
     
-- name: Ansible delete files
-  become: yes
-  become_method: sudo
-  become_user: root
-  file:
-    path: /tmp/connect_atp.sh
-    state: absent
-  register: client18
+#- name: Ansible delete files
+#  become: yes
+#  become_method: sudo
+#  become_user: root
+#  file:
+#    path: /tmp/connect_atp.sh
+#    state: absent
+#  register: client18
 
 - name: Print rm files
   ansible.builtin.debug:
