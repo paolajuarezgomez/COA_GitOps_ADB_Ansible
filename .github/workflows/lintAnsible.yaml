@@ -13,3 +13,10 @@ jobs:
     steps:
     - name: checkout repo
       uses: actions/checkout@v3
+
+    - name: Run ansible-lint
+      # replace `main` with any valid ref, or tags like `v6`
+      uses: ansible-community/ansible-lint-action@main
+      # optional:
+      with:
+         path: "./playbook"  
