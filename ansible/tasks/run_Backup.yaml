@@ -29,7 +29,7 @@
   ansible.builtin.command: oci db autonomous-database-backup create --display-name {{ display_name }} --autonomous-database-id {{ database_id }}
   register: client3
   changed_when: client3.rc != 0
-- name: Print copy config_Backup.sql
+- name: Print copy oci cli adb backup
   ansible.builtin.debug:
     var: client3
 - name: Ansible delete config file
