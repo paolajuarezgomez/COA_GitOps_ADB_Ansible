@@ -62,7 +62,7 @@ VAULT_PASSWORD
 
 * If we review tab "actions" , we can check the two different pipelines:
 
-
+![tabactions](images/9.png)
 
 ## ✅ References
 * [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
