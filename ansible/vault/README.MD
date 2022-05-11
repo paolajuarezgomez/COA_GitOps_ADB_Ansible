@@ -17,9 +17,25 @@ Confirm New Vault password:
 
 include the secret information
 ````
+[DEFAULT]
+user=ocid1.user.oc1..******
+fingerprint=******
+key_file=/root/.oci/oci_api_key.pem
+tenancy=ocid1.tenancy.******
+region=uk-london-1
 ````
 
 cat config
 ````
+[DEFAULT]
+user=ocid1.user.oc1..******
+fingerprint=******
+key_file=/root/.oci/oci_api_key.pem
+tenancy=ocid1.tenancy.******
+region=uk-london-1
 ````
 
+If you want to review the content of a encrypted file you can use the command 
+````
+ansible-vault view *file* 
+````
