@@ -45,7 +45,7 @@ VAULT_PASSWORD
 * Review if the playbook uses any vault file, if is needed you need to encrypt the content of the file using ansible-vault.  
 
 * Open a "merge pull request" and check how the first  pipeline run:
-![tabactions](images/1)
+![tabactions](images/1.png)
 
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launched.
 * After the provisioning, the outcome of the apply step is showed in the merge request page.(*Pull requests -> closed -> pull request created* )
