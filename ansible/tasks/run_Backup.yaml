@@ -51,6 +51,6 @@
     path: /root/.oci/oci_api_key.pem
     state: absent
   register: client5
-- name: Print delete api 
+- name: Print delete api file
   ansible.builtin.debug:
     var: client5
