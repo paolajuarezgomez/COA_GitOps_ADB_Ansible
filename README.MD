@@ -55,11 +55,10 @@ VAULT_PASSWORD
 ![tabactions](images/4.png)
 
 ![tabactions](images/6.png)
+* After riview test pipeline, you can go and confirm the merge.
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launched.
 
 ![tabactions](images/8.png)
-
-* After the ansible deployment, the apply step is showed in the merge request page.(*Pull requests -> closed -> pull request created* )
 
 * If we review tab "actions" , we can check the two different pipelines:
 
