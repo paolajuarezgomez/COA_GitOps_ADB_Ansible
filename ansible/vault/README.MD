@@ -5,13 +5,21 @@ The ansible-vault command is the main interface for managing encrypted content w
 
 In a machine with ansible installed run:
 
+````
 ansible-vault create config
+````
 
 Output
+````
 New Vault password: 
 Confirm New Vault password:
+````
 
 include the secret information
+````
+````
 
 cat config
+````
+````
 
