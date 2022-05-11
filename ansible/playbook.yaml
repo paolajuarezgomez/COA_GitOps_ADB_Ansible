@@ -1,9 +1,7 @@
 - hosts: bastion  
   tasks:
    - name: include variables
-     ansible.builtin.include_vars: 
-      file: ./variables/var_run_backup.yaml
+     ansible.builtin.include_vars: ./variables/var_run_backup.yaml
    - name: include tasks
-     ansible.builtin.include_vars: 
-      file: ./tasks/run_Backup.yaml
+     ansible.builtin.include_vars: ./tasks/run_Backup.yaml
      
