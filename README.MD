@@ -45,18 +45,12 @@ VAULT_PASSWORD
 * Review if the playbook uses any vault file, if is needed you need to encrypt the content of the file using ansible-vault.  
 
 * Open a "merge pull request" and check how the first  pipeline run:
-![tabactions](images/Pullreques.png)
-
-![tabactions](images/Pullreques1.png)
+![tabactions](images/1)
 
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launched.
-![meergeends](images/meergeends.png)
-
 * After the provisioning, the outcome of the apply step is showed in the merge request page.(*Pull requests -> closed -> pull request created* )
-![console](images/OutcomeApply.png)
-
 * If we review tab "actions" , we can check the two different pipelines:
-![tabactions](images/tabactions.png)
+
 
 
 ## ✅ References
