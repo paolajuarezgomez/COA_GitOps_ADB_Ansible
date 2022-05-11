@@ -48,15 +48,18 @@ VAULT_PASSWORD
 * Open a "merge pull request" and check how the first  pipeline run:
 ![tabactions](images/1.png)
 ![tabactions](images/2.png)
+
+* When you approve the merge, the "ansible deploy" pipeline will be automatically launched.
 ![tabactions](images/3.png)
 ![tabactions](images/4.png)
 ![tabactions](images/5.png)
 ![tabactions](images/6.png)
 ![tabactions](images/7.png)
+* After the ansible deployment, the apply step is showed in the merge request page.(*Pull requests -> closed -> pull request created* )
+
 ![tabactions](images/8.png)
 
 
-* After the provisioning, the outcome of the apply step is showed in the merge request page.(*Pull requests -> closed -> pull request created* )
 * If we review tab "actions" , we can check the two different pipelines:
 
 
