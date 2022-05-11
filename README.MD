@@ -50,11 +50,12 @@ VAULT_PASSWORD
 ![tabactions](images/2.png)
 
 ![tabactions](images/3.png)
+![tabactions](images/7.png)
+
 ![tabactions](images/4.png)
 
 ![tabactions](images/6.png)
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launched.
-![tabactions](images/7.png)
 
 ![tabactions](images/8.png)
 
