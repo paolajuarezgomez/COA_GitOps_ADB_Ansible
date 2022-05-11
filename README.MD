@@ -16,6 +16,7 @@ During this UseCase we're going to:
 
 ![tabactions](images/Diagram.png)
 
+
 ## ✅ Usage
 
 * Clone this repo in GitHub and create you own repository.
@@ -46,8 +47,15 @@ VAULT_PASSWORD
 
 * Open a "merge pull request" and check how the first  pipeline run:
 ![tabactions](images/1.png)
+![tabactions](images/2.png)
+![tabactions](images/3.png)
+![tabactions](images/4.png)
+![tabactions](images/5.png)
+![tabactions](images/6.png)
+![tabactions](images/7.png)
+![tabactions](images/8.png)
 
-* When you approve the merge, the "ansible deploy" pipeline will be automatically launched.
+
 * After the provisioning, the outcome of the apply step is showed in the merge request page.(*Pull requests -> closed -> pull request created* )
 * If we review tab "actions" , we can check the two different pipelines:
 
