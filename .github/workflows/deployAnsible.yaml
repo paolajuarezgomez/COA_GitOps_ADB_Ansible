@@ -6,7 +6,6 @@ on:
       - closed
 
 jobs:
-
   deployAnsible:
     runs-on: ubuntu-latest
     
