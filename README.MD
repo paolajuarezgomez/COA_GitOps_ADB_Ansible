@@ -67,5 +67,6 @@ VAULT_PASSWORD
 ## ✅ References
 * [Ansible Lint](https://ansible-lint.readthedocs.io/en/latest/)
 * [Ansible Linting with GitHub Actions](https://www.ansible.com/blog/ansible-linting-with-github-actions)
+* [Run Ansible playbook GitHub Action](https://github.com/dawidd6/action-ansible-playbook)
 
 
