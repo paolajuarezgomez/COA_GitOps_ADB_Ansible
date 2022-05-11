@@ -3,7 +3,7 @@
 
 ## ✅ Showcase
 
-GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
+GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipelines. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
 
 A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file checked in to your repository and will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule.
 
@@ -12,14 +12,14 @@ During this UseCase we're going to:
 * Use Github Actions to build different workflows.
 * Create a test workflow using Lint ansible.
 * Run gitops operations in an ATP workload using ansible playbooks.
-* We´ll use a host bastion as a Ansible [control node](https://docs.ansible.com/ansible/2.5/network/getting_started/basic_concepts.html#control-node)
+* We´ll use a host bastion as ansible [control node](https://docs.ansible.com/ansible/2.5/network/getting_started/basic_concepts.html#control-node)
 
 ![tabactions](images/Diagram.png)
 
 ## ✅ Usage
 
 * Clone this repo in GitHub and create you own repository.
-* Add the ssh key needed to connect to the bastion in the github secrets:
+* Add the ssh key in the github secrets in order to connect to the bastion :
 
    * Navigate to your repository and select the Settings tab.
    * Once there you should see on the left a Secrets section third from the bottom of the list, click on that.
