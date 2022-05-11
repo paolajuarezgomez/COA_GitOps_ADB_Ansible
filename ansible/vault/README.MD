@@ -1,7 +1,7 @@
 
 ## ✅ How to use ansible-vault to encryt files in ansible pipelines
 
-The ansible-vault command is the main interface for managing encrypted content within Ansible. For example in this repo we had the file *conf* encrypted. To create this file we have folloews the next steps:
+The ansible-vault command is the main interface for managing encrypted content within Ansible. For example in this repo we had the file *conf* encrypted. To create this file we have followed the next steps:
 
 In a machine with ansible installed,  run:
 
@@ -35,7 +35,7 @@ tenancy=ocid1.tenancy.******
 region=uk-london-1
 ````
 
-If you want to review the content of a encrypted file you can use the command 
+If you want to review the content of an encrypted file you can use the command 
 ````
 ansible-vault view <file-name> 
 ````
