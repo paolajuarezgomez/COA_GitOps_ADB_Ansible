@@ -27,8 +27,8 @@
   become_method: sudo
   become_user: root
   ansible.builtin.command: oci db autonomous-database-backup create --display-name {{ display_name }} --autonomous-database-id {{ database_id }}
-  changed_when: dblist.rc != 0
   register: client3
+  changed_when: client3.rc != 0
 - name: Print copy config_Backup.sql
   ansible.builtin.debug:
     var: client3
