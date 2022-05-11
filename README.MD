@@ -55,7 +55,7 @@ VAULT_PASSWORD
 ![tabactions](images/4.png)
 
 ![tabactions](images/6.png)
-* After riview test pipeline, you can go and confirm the merge.
+* After review test pipeline outcome, you can go and confirm the merge. ( pull requests-> request)
 * When you approve the merge, the "ansible deploy" pipeline will be automatically launched.
 
 ![tabactions](images/8.png)
@@ -65,6 +65,7 @@ VAULT_PASSWORD
 ![tabactions](images/9.png)
 
 ## ✅ References
-* [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+* [Ansible Lint](https://ansible-lint.readthedocs.io/en/latest/)
+* [Ansible Linting with GitHub Actions](https://www.ansible.com/blog/ansible-linting-with-github-actions)
 
 
