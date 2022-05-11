@@ -55,12 +55,12 @@ VAULT_PASSWORD
 ![tabactions](images/4.png)
 
 ![tabactions](images/6.png)
-* After review test pipeline outcome, you can go and confirm the merge. ( pull requests-> request)
-* When you approve the merge, the "ansible deploy" pipeline will be automatically launched.
+* After review the test pipeline (ansible lint) outcome, you can go and confirm the merge. (pull requests-> request)
+* When you approve the merge, the "ansible deploy" pipeline will be automatically launch.
 
 ![tabactions](images/8.png)
 
-* If we review tab "actions" , we can check the two different pipelines:
+* If we review the tab "actions" , we can check our two workflows
 
 ![tabactions](images/9.png)
 
