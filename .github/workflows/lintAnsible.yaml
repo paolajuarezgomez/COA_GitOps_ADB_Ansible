@@ -26,7 +26,7 @@ jobs:
       # optional:
       with:
        targets: "./ansible/playbook.yaml" 
-        
+      
         # [required]
         # Paths to ansible files (i.e., playbooks, tasks, handlers etc..)
         # or valid Ansible directories according to the Ansible role
