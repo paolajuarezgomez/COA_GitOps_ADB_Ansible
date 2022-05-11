@@ -36,7 +36,7 @@
   become: true
   become_method: sudo
   become_user: root
-  file:
+  ansible.builtin.file:
     path: /root/.oci/config
     state: absent
   register: client4
@@ -47,7 +47,7 @@
   become: true
   become_method: sudo
   become_user: root
-  file:
+  ansible.builtin.file:
     path: /root/.oci/oci_api_key.pem
     state: absent
   register: client5

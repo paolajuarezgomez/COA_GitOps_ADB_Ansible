@@ -4,4 +4,3 @@
      include_vars: ./variables/var_run_backup.yaml
    - name: include tasks
      import_tasks: ./tasks/run_Backup.yaml
-   
